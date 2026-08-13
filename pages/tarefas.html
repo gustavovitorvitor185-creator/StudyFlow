@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tarefas | StudyFlow</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 min-h-screen text-slate-100 font-sans overflow-hidden">
+
+  <!-- Glow -->
+  <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 blur-3xl rounded-full"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full"></div>
+
+  <div class="flex min-h-screen relative z-10">
+
+    <!-- Sidebar -->
+    <aside class="w-72 bg-slate-900/70 backdrop-blur-xl border-r border-white/10 p-6 flex flex-col justify-between">
+
+      <div>
+
+        <!-- Logo -->
+        <div class="mb-12">
+
+          <div class="flex items-center gap-3 mb-2">
+
+            <img
+            src="../assets/StudyFlow.png"
+            alt="Logo do StudyFlow"
+            class="w-20 h-20 object-contain flex-shrink-0"
+        >
+
+            <div>
+              <h1 class="text-3xl font-black bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                StudyFlow
+              </h1>
+
+              <p class="text-slate-400 text-sm">
+                Productivity Dashboard
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu -->
+        <nav class="space-y-3">
+
+          <a href="dashboard.html"
+            class="block w-full hover:bg-white/5 transition rounded-2xl px-5 py-4 text-slate-300 border border-transparent hover:border-white/10">
+            Dashboard
+          </a>
+
+          <a href="tarefas.html"
+            class="block w-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white rounded-2xl px-5 py-4 font-semibold shadow-xl shadow-blue-500/20">
+            Tarefas
+          </a>
+
+          <a href="materias.html"
+            class="block w-full hover:bg-white/5 transition rounded-2xl px-5 py-4 text-slate-300 border border-transparent hover:border-white/10">
+            Matérias
+          </a>
+
+          <a href="calendario.html"
+            class="block w-full hover:bg-white/5 transition rounded-2xl px-5 py-4 text-slate-300 border border-transparent hover:border-white/10">
+            Calendário
+          </a>
+
+          <a href="pomodoro.html"
+            class="block w-full hover:bg-white/5 transition rounded-2xl px-5 py-4 text-slate-300 border border-transparent hover:border-white/10">
+            Pomodoro
+          </a>
+        </nav>
+      </div>
+
+      <!-- Progress -->
+      <div class="bg-gradient-to-br from-blue-500/20 to-cyan-400/10 rounded-3xl p-5 border border-white/10 backdrop-blur-lg shadow-2xl shadow-blue-500/10">
+
+        <div class="flex justify-between items-center mb-4">
+          <p class="text-sm text-slate-300">Tarefas concluídas</p>
+          <span class="text-cyan-300 text-sm font-semibold">75%</span>
+        </div>
+
+        <h2 class="text-4xl font-black">15/20</h2>
+
+        <div class="w-full h-3 bg-slate-700/50 rounded-full mt-5 overflow-hidden">
+          <div class="h-full w-[75%] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></div>
+        </div>
+
+        <p class="text-slate-400 text-sm mt-4">
+          Você está quase terminando 
+        </p>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex-1 p-8 overflow-y-auto">
+
+      <!-- Header -->
+      <div class="flex items-center justify-between mb-10 flex-wrap gap-4">
+
+        <div>
+          <p class="text-cyan-300 font-medium mb-2">
+            Organize sua rotina 
+          </p>
+
+          <h2 class="text-5xl font-black leading-tight">
+            Suas
+            <span class="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+              tarefas
+            </span>
+          </h2>
+        </div>
+
+        <button
+  id="btnNovaTarefa"
+  class="bg-gradient-to-r from-blue-500 to-cyan-400 hover:scale-105 transition duration-300 px-7 py-4 rounded-2xl font-bold shadow-2xl shadow-blue-500/20">
+  + Nova tarefa
+        </button>
+      </div>
+
+      <!-- Tasks -->
+      <section id="listaTarefas" class="space-y-6">
+
+        <!-- Task 1 -->
+        <div class="bg-white/5 backdrop-blur-xl border border-green-500/20 rounded-3xl p-6 shadow-2xl flex items-center justify-between hover:-translate-y-1 transition duration-300">
+
+          <div class="flex items-center gap-5">
+
+            <div class="w-6 h-6 rounded-full bg-green-400 shadow-lg shadow-green-400/30"></div>
+
+            <div>
+              <h3 class="text-2xl font-bold">
+                Estudar JavaScript
+              </h3>
+
+              <p class="text-slate-400 mt-1">
+                Revisar funções e arrays.
+              </p>
+            </div>
+          </div>
+
+          <span class="bg-green-500/20 text-green-300 px-5 py-3 rounded-2xl text-sm font-semibold border border-green-500/20">
+            Concluído
+          </span>
+        </div>
+
+        <!-- Task 2 -->
+        <div class="bg-white/5 backdrop-blur-xl border border-yellow-500/20 rounded-3xl p-6 shadow-2xl flex items-center justify-between hover:-translate-y-1 transition duration-300">
+
+          <div class="flex items-center gap-5">
+
+            <div class="w-6 h-6 rounded-full bg-yellow-400 shadow-lg shadow-yellow-400/30"></div>
+
+            <div>
+              <h3 class="text-2xl font-bold">
+                Fazer atividade de Matemática
+              </h3>
+
+              <p class="text-slate-400 mt-1">
+                Exercícios de Bhaskara.
+              </p>
+            </div>
+          </div>
+
+          <span class="bg-yellow-500/20 text-yellow-300 px-5 py-3 rounded-2xl text-sm font-semibold border border-yellow-500/20">
+            Pendente
+          </span>
+        </div>
+
+        <!-- Task 3 -->
+        <div class="bg-white/5 backdrop-blur-xl border border-red-500/20 rounded-3xl p-6 shadow-2xl flex items-center justify-between hover:-translate-y-1 transition duration-300">
+
+          <div class="flex items-center gap-5">
+
+            <div class="w-6 h-6 rounded-full bg-red-400 shadow-lg shadow-red-400/30"></div>
+
+            <div>
+              <h3 class="text-2xl font-bold">
+                Finalizar projeto técnico
+              </h3>
+
+              <p class="text-slate-400 mt-1">
+                Ajustar front-end do StudyFlow.
+              </p>
+            </div>
+          </div>
+
+          <span class="bg-red-500/20 text-red-300 px-5 py-3 rounded-2xl text-sm font-semibold border border-red-500/20">
+            Urgente
+          </span>
+        </div>
+
+        <!-- Task 4 -->
+        <div class="bg-white/5 backdrop-blur-xl border border-cyan-500/20 rounded-3xl p-6 shadow-2xl flex items-center justify-between hover:-translate-y-1 transition duration-300">
+
+          <div class="flex items-center gap-5">
+
+            <div class="w-6 h-6 rounded-full bg-cyan-400 shadow-lg shadow-cyan-400/30"></div>
+
+            <div>
+              <h3 class="text-2xl font-bold">
+                Revisar Inglês
+              </h3>
+
+              <p class="text-slate-400 mt-1">
+                Vocabulário e leitura.
+              </p>
+            </div>
+          </div>
+
+          <span class="bg-cyan-500/20 text-cyan-300 px-5 py-3 rounded-2xl text-sm font-semibold border border-cyan-500/20">
+            Em andamento
+          </span>
+        </div>
+
+      </section>
+
+      <!-- Bottom Cards -->
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+
+        <!-- Card -->
+        <div class="bg-gradient-to-br from-blue-500/20 to-cyan-400/10 backdrop-blur-xl border border-white/10 rounded-3xl p-7 shadow-2xl">
+
+          <p class="text-slate-300 text-lg">
+            Tarefas concluídas hoje
+          </p>
+
+          <h2 class="text-6xl font-black mt-5 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+            5
+          </h2>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-gradient-to-br from-green-500/20 to-emerald-400/10 backdrop-blur-xl border border-white/10 rounded-3xl p-7 shadow-2xl">
+
+          <p class="text-slate-300 text-lg">
+            Produtividade
+          </p>
+
+          <h2 class="text-6xl font-black mt-5 bg-gradient-to-r from-green-400 to-emerald-300 bg-clip-text text-transparent">
+            89%
+          </h2>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-gradient-to-br from-purple-500/20 to-pink-400/10 backdrop-blur-xl border border-white/10 rounded-3xl p-7 shadow-2xl">
+
+          <p class="text-slate-300 text-lg">
+            Tempo estudado
+          </p>
+
+          <h2 class="text-6xl font-black mt-5 bg-gradient-to-r from-purple-400 to-pink-300 bg-clip-text text-transparent">
+            4h
+          </h2>
+        </div>
+
+      </section>
+    </main>
+  </div>
+  <script src="../js/tarefas.js"></script>
+</body>
+</html>
