@@ -1,73 +1,152 @@
-const timer = document.getElementById("timer");
+// ===== POMODORO =====
 
-const btnIniciar = document.getElementById("btnIniciar");
-const btnPausar = document.getElementById("btnPausar");
-const btnResetar = document.getElementById("btnResetar");
+// Elementos da página
+const timer =
+    document.getElementById("timer");
 
-let minutos = 25;
+const btnIniciar =
+    document.getElementById("btnIniciar");
+
+const btnPausar =
+    document.getElementById("btnPausar");
+
+const btnResetar =
+    document.getElementById("btnResetar");
+
+
+// ===== CONFIGURAÇÕES =====
+
+const TEMPO_INICIAL_MINUTOS = 25;
+
+
+// ===== ESTADO DO TIMER =====
+
+let minutos = TEMPO_INICIAL_MINUTOS;
 let segundos = 0;
 
 let intervalo = null;
 
+
+// ===== ATUALIZAR TELA =====
+
 function atualizarTela() {
-  timer.textContent =
-    `${String(minutos).padStart(2, "0")}:${String(segundos).padStart(2, "0")}`;
+
+    if (!timer) return;
+
+    timer.textContent =
+        `${String(minutos).padStart(2, "0")}:${String(segundos).padStart(2, "0")}`;
+
 }
+
+
+// ===== INICIAR POMODORO =====
 
 function iniciarPomodoro() {
 
-  if (intervalo) return;
+    // Evita criar vários intervalos ao mesmo tempo
+    if (intervalo) return;
 
-  intervalo = setInterval(() => {
 
-    if (segundos === 0) {
+    intervalo = setInterval(() => {
 
-      if (minutos === 0) {
+        // Quando chega em 00 segundos
+        if (segundos === 0) {
 
-        clearInterval(intervalo);
-        intervalo = null;
+            // Quando o tempo chega ao final
+            if (minutos === 0) {
 
-        alert("Pomodoro concluído! 🎉");
+                clearInterval(intervalo);
 
-        return;
-      }
+                intervalo = null;
 
-      minutos--;
-      segundos = 59;
+                alert("Pomodoro concluído! 🎉");
 
-    } else {
+                atualizarTela();
 
-      segundos--;
+                return;
+            }
 
-    }
 
-    atualizarTela();
+            minutos--;
 
-  }, 1000);
+            segundos = 59;
+
+        } else {
+
+            segundos--;
+
+        }
+
+
+        atualizarTela();
+
+    }, 1000);
 
 }
+
+
+// ===== PAUSAR POMODORO =====
 
 function pausarPomodoro() {
 
-  clearInterval(intervalo);
-  intervalo = null;
+    if (!intervalo) return;
+
+    clearInterval(intervalo);
+
+    intervalo = null;
 
 }
+
+
+// ===== RESETAR POMODORO =====
 
 function resetarPomodoro() {
 
-  clearInterval(intervalo);
-  intervalo = null;
+    clearInterval(intervalo);
 
-  minutos = 25;
-  segundos = 0;
+    intervalo = null;
 
-  atualizarTela();
+    minutos = TEMPO_INICIAL_MINUTOS;
+
+    segundos = 0;
+
+    atualizarTela();
 
 }
 
-btnIniciar.addEventListener("click", iniciarPomodoro);
-btnPausar.addEventListener("click", pausarPomodoro);
-btnResetar.addEventListener("click", resetarPomodoro);
+
+// ===== EVENTOS DOS BOTÕES =====
+
+if (btnIniciar) {
+
+    btnIniciar.addEventListener(
+        "click",
+        iniciarPomodoro
+    );
+
+}
+
+
+if (btnPausar) {
+
+    btnPausar.addEventListener(
+        "click",
+        pausarPomodoro
+    );
+
+}
+
+
+if (btnResetar) {
+
+    btnResetar.addEventListener(
+        "click",
+        resetarPomodoro
+    );
+
+}
+
+
+// ===== INICIALIZAÇÃO =====
 
 atualizarTela();

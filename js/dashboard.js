@@ -1,16 +1,33 @@
-alert("dashboard.js funcionando");
+// ===== DADOS DO DASHBOARD =====
 
 const totalMaterias = document.getElementById("totalMaterias");
 const totalTarefas = document.getElementById("totalTarefas");
 const totalEventos = document.getElementById("totalEventos");
 
-const materias = JSON.parse(localStorage.getItem("materiasStudyFlow")) || [];
-const tarefas = JSON.parse(localStorage.getItem("tarefasStudyFlow")) || [];
-const eventos = JSON.parse(localStorage.getItem("eventosStudyFlow")) || [];
+const materias =
+    JSON.parse(localStorage.getItem("materiasStudyFlow")) || [];
 
-totalMaterias.textContent = materias.length;
-totalTarefas.textContent = tarefas.length;
-totalEventos.textContent = eventos.length;
+const tarefas =
+    JSON.parse(localStorage.getItem("tarefasStudyFlow")) || [];
+
+const eventos =
+    JSON.parse(localStorage.getItem("eventosStudyFlow")) || [];
+
+
+// ===== CONTADORES =====
+
+if (totalMaterias) {
+    totalMaterias.textContent = materias.length;
+}
+
+if (totalTarefas) {
+    totalTarefas.textContent = tarefas.length;
+}
+
+if (totalEventos) {
+    totalEventos.textContent = eventos.length;
+}
+
 
 // ===== LOGOUT =====
 
@@ -33,8 +50,12 @@ if (btnLogout) {
     });
 
 }
+
+
+// ===== ÚLTIMA TAREFA =====
+
 const ultimaTarefa =
-  document.getElementById("ultimaTarefa");
+    document.getElementById("ultimaTarefa");
 
 if (ultimaTarefa) {
 
@@ -43,11 +64,20 @@ if (ultimaTarefa) {
         ultimaTarefa.textContent =
             tarefas[tarefas.length - 1].nome;
 
+    } else {
+
+        ultimaTarefa.textContent =
+            "Nenhuma tarefa cadastrada";
+
     }
 
 }
+
+
+// ===== PRÓXIMO EVENTO =====
+
 const proximoEvento =
-  document.getElementById("proximoEvento");
+    document.getElementById("proximoEvento");
 
 if (proximoEvento) {
 
@@ -56,16 +86,23 @@ if (proximoEvento) {
         proximoEvento.textContent =
             eventos[eventos.length - 1].nome;
 
+    } else {
+
+        proximoEvento.textContent =
+            "Nenhum evento cadastrado";
+
     }
 
 }
 
+
 // ===== MENU MOBILE =====
 
-alert("dashboard.js carregou!");
+const btnMenu =
+    document.getElementById("btnMenu");
 
-const btnMenu = document.getElementById("btnMenu");
-const sidebar = document.getElementById("sidebar");
+const sidebar =
+    document.getElementById("sidebar");
 
 if (btnMenu && sidebar) {
 
@@ -77,57 +114,47 @@ if (btnMenu && sidebar) {
 
 }
 
-const usuario = JSON.parse(
-  localStorage.getItem("usuarioStudyFlow")
-);
-
-const perfilNome =
-  document.getElementById("perfilNome");
-
-const perfilEmail =
-  document.getElementById("perfilEmail");
-
-if (usuario) {
-
-  perfilNome.textContent =
-    usuario.nome;
-
-  perfilEmail.textContent =
-    usuario.email;
-
-}
 
 // ===== PERFIL DO USUÁRIO =====
 
-
 const usuario = JSON.parse(
-  localStorage.getItem("usuarioStudyFlow")
+    localStorage.getItem("usuarioStudyFlow")
 );
 
 const nomeUsuario =
-  document.getElementById("nomeUsuario");
+    document.getElementById("nomeUsuario");
 
 const perfilNome =
-  document.getElementById("perfilNome");
+    document.getElementById("perfilNome");
 
 const perfilEmail =
-  document.getElementById("perfilEmail");
+    document.getElementById("perfilEmail");
+
 
 if (usuario) {
 
-  if (nomeUsuario) {
-    nomeUsuario.textContent =
-      `Olá, ${usuario.nome} 👋`;
-  }
+    // Nome da saudação
+    if (nomeUsuario) {
 
-  if (perfilNome) {
-    perfilNome.textContent =
-      usuario.nome;
-  }
+        nomeUsuario.textContent =
+            `Olá, ${usuario.nome}`;
 
-  if (perfilEmail) {
-    perfilEmail.textContent =
-      usuario.email;
-  }
+    }
+
+    // Nome no perfil
+    if (perfilNome) {
+
+        perfilNome.textContent =
+            usuario.nome;
+
+    }
+
+    // Email no perfil
+    if (perfilEmail) {
+
+        perfilEmail.textContent =
+            usuario.email;
+
+    }
 
 }

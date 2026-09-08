@@ -1,0 +1,272 @@
+/* ========================================
+   STUDYFLOW - RESPONSIVIDADE
+   DASHBOARD
+======================================== */
+
+
+/* ===== TABLETS ===== */
+
+@media (max-width: 1024px) {
+
+    /* Ajusta o conteúdo principal */
+    main {
+        min-width: 0;
+    }
+
+    /* Evita elementos largos demais */
+    section {
+        min-width: 0;
+    }
+
+}
+
+
+/* ===== CELULARES ===== */
+
+@media (max-width: 768px) {
+
+    /* Evita rolagem horizontal */
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* Conteúdo principal */
+    main {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* Títulos grandes */
+    h1 {
+        word-break: break-word;
+    }
+
+    h2 {
+        word-break: break-word;
+    }
+
+    h3 {
+        word-break: break-word;
+    }
+
+
+    /* Cards */
+    .card {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* Imagens */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    /* Botões */
+    button,
+    a {
+        max-width: 100%;
+    }
+
+}
+
+
+/* ===== CELULARES PEQUENOS ===== */
+
+@media (max-width: 480px) {
+
+    /* Reduz um pouco o tamanho dos textos */
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+
+    /* Cards menores */
+    .card {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+
+    /* Evita botões gigantes */
+    button {
+        max-width: 100%;
+    }
+
+}
+
+/* ========================================
+   SIDEBAR MOBILE
+======================================== */
+
+@media (max-width: 1023px) {
+
+    /* Sidebar quando estiver aberta */
+    #sidebar:not(.hidden) {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: min(320px, 85vw);
+        height: 100vh;
+
+        z-index: 50;
+
+        overflow-y: auto;
+
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: none;
+
+        box-shadow: 20px 0 50px rgba(0, 0, 0, 0.35);
+    }
+
+}
+
+/* ========================================
+   DASHBOARD - CARDS RESPONSIVOS
+======================================== */
+
+@media (max-width: 768px) {
+
+    /* Espaçamento da área dos cards */
+    section.grid {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Cards */
+    section.grid > div {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Números dos cards */
+    section.grid h3 {
+        font-size: 2.5rem;
+        margin-top: 1rem;
+    }
+
+    /* Textos */
+    section.grid p {
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+}
+
+
+/* ===== CELULARES PEQUENOS ===== */
+
+@media (max-width: 480px) {
+
+    section.grid {
+        gap: 0.875rem;
+    }
+
+    section.grid h3 {
+        font-size: 2.25rem;
+    }
+
+}
+
+/* ========================================
+   DASHBOARD - CONTEÚDO PRINCIPAL
+======================================== */
+
+@media (max-width: 768px) {
+
+    /* Área de conteúdo */
+    section.grid {
+        width: 100%;
+    }
+
+    /* Cards principais de conteúdo */
+    section.grid > div {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Tarefas do dia */
+    section.grid h3 {
+        font-size: 1.75rem;
+        line-height: 1.2;
+    }
+
+    /* Área da última tarefa */
+    section.grid .card {
+        width: 100%;
+        padding: 18px;
+        margin-top: 1rem;
+    }
+
+    /* Tarefas */
+    section.grid .space-y-5 > div {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Textos das tarefas */
+    section.grid h4 {
+        overflow-wrap: break-word;
+    }
+
+    /* Status das tarefas */
+    section.grid span {
+        max-width: 100%;
+    }
+
+    /* Perfil */
+    #perfilNome,
+    #perfilEmail {
+        overflow-wrap: anywhere;
+    }
+
+}
+
+
+/* ===== CELULARES PEQUENOS ===== */
+
+@media (max-width: 480px) {
+
+    /* Espaçamento dos blocos */
+    section.grid {
+        gap: 1rem;
+    }
+
+    /* Cards */
+    section.grid > div {
+        padding: 20px;
+        border-radius: 22px;
+    }
+
+    /* Título */
+    section.grid h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Última tarefa */
+    section.grid .card h4 {
+        font-size: 1rem;
+    }
+
+    /* Botão do perfil */
+    #btnEditarPerfil {
+        width: 100%;
+    }
+
+}
