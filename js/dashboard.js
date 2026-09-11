@@ -29,29 +29,6 @@ if (totalEventos) {
 }
 
 
-// ===== LOGOUT =====
-
-const btnLogout = document.getElementById("btnLogout");
-
-if (btnLogout) {
-
-    btnLogout.addEventListener("click", () => {
-
-        const confirmar = confirm(
-            "Deseja realmente sair da sua conta?"
-        );
-
-        if (!confirmar) return;
-
-        localStorage.removeItem("usuarioLogado");
-
-        window.location.href = "login.html";
-
-    });
-
-}
-
-
 // ===== ÚLTIMA TAREFA =====
 
 const ultimaTarefa =

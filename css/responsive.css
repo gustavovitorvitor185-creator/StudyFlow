@@ -1,19 +1,81 @@
 /* ========================================
    STUDYFLOW - RESPONSIVIDADE
-   DASHBOARD
 ======================================== */
 
 
-/* ===== TABLETS ===== */
+/* ========================================
+   SIDEBAR RETRÁTIL - DESKTOP
+======================================== */
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
 
-    /* Ajusta o conteúdo principal */
+    .sidebar-desktop {
+        width: 72px !important;
+        min-width: 72px;
+        flex-shrink: 0;
+        overflow: hidden;
+
+        transition:
+            width 0.3s ease,
+            min-width 0.3s ease;
+
+        position: relative;
+    }
+
+    .sidebar-desktop:hover {
+        width: 288px !important;
+        min-width: 288px;
+    }
+
+    .sidebar-desktop > div {
+        transition: opacity 0.2s ease;
+    }
+
+    .sidebar-desktop:not(:hover) > div {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .sidebar-desktop:hover > div {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .sidebar-desktop::after {
+        content: "☰";
+
+        position: absolute;
+
+        top: 42%;
+        right: 50%;
+
+        transform: translate(50%, -50%);
+
+        font-size: 22px;
+
+        color: rgba(103, 232, 249, 0.8);
+
+        pointer-events: none;
+
+        transition: opacity 0.2s ease;
+    }
+
+    .sidebar-desktop:hover::after {
+        opacity: 0;
+    }
+}
+
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (max-width: 1023px) {
+
     main {
         min-width: 0;
     }
 
-    /* Evita elementos largos demais */
     section {
         min-width: 0;
     }
@@ -21,104 +83,24 @@
 }
 
 
-/* ===== CELULARES ===== */
-
-@media (max-width: 768px) {
-
-    /* Evita rolagem horizontal */
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-
-    /* Conteúdo principal */
-    main {
-        width: 100%;
-        min-width: 0;
-    }
-
-
-    /* Títulos grandes */
-    h1 {
-        word-break: break-word;
-    }
-
-    h2 {
-        word-break: break-word;
-    }
-
-    h3 {
-        word-break: break-word;
-    }
-
-
-    /* Cards */
-    .card {
-        width: 100%;
-        min-width: 0;
-    }
-
-
-    /* Imagens */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-
-    /* Botões */
-    button,
-    a {
-        max-width: 100%;
-    }
-
-}
-
-
-/* ===== CELULARES PEQUENOS ===== */
-
-@media (max-width: 480px) {
-
-    /* Reduz um pouco o tamanho dos textos */
-    h1 {
-        font-size: 1.75rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    h3 {
-        font-size: 1.25rem;
-    }
-
-
-    /* Cards menores */
-    .card {
-        padding: 18px;
-        border-radius: 20px;
-    }
-
-
-    /* Evita botões gigantes */
-    button {
-        max-width: 100%;
-    }
-
-}
-
 /* ========================================
-   SIDEBAR MOBILE
+   SIDEBAR - TABLET / CELULAR
 ======================================== */
 
 @media (max-width: 1023px) {
 
-    /* Sidebar quando estiver aberta */
-    #sidebar:not(.hidden) {
+    /*
+       Todos os IDs de sidebar do StudyFlow
+       recebem o mesmo comportamento mobile.
+    */
+
+    #sidebar:not(.hidden),
+    #sidebarTarefas:not(.hidden),
+    #sidebarMaterias:not(.hidden),
+    #sidebarCalendario:not(.hidden) {
+
         position: fixed;
+
         top: 0;
         left: 0;
 
@@ -137,31 +119,71 @@
 
 }
 
+
+/* ========================================
+   CELULARES
+======================================== */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    main {
+        width: 100%;
+        min-width: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+        word-break: break-word;
+    }
+
+    .card {
+        width: 100%;
+        min-width: 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    button,
+    a {
+        max-width: 100%;
+    }
+
+}
+
+
 /* ========================================
    DASHBOARD - CARDS RESPONSIVOS
 ======================================== */
 
 @media (max-width: 768px) {
 
-    /* Espaçamento da área dos cards */
     section.grid {
+        width: 100%;
         gap: 1rem;
         margin-bottom: 1.5rem;
     }
 
-    /* Cards */
     section.grid > div {
         width: 100%;
         min-width: 0;
     }
 
-    /* Números dos cards */
     section.grid h3 {
-        font-size: 2.5rem;
-        margin-top: 1rem;
+        font-size: 1.75rem;
+        line-height: 1.2;
     }
 
-    /* Textos */
     section.grid p {
         max-width: 100%;
         overflow-wrap: break-word;
@@ -170,67 +192,40 @@
 }
 
 
-/* ===== CELULARES PEQUENOS ===== */
-
-@media (max-width: 480px) {
-
-    section.grid {
-        gap: 0.875rem;
-    }
-
-    section.grid h3 {
-        font-size: 2.25rem;
-    }
-
-}
-
 /* ========================================
    DASHBOARD - CONTEÚDO PRINCIPAL
 ======================================== */
 
 @media (max-width: 768px) {
 
-    /* Área de conteúdo */
     section.grid {
         width: 100%;
     }
 
-    /* Cards principais de conteúdo */
     section.grid > div {
         width: 100%;
         min-width: 0;
     }
 
-    /* Tarefas do dia */
-    section.grid h3 {
-        font-size: 1.75rem;
-        line-height: 1.2;
-    }
-
-    /* Área da última tarefa */
     section.grid .card {
         width: 100%;
         padding: 18px;
         margin-top: 1rem;
     }
 
-    /* Tarefas */
     section.grid .space-y-5 > div {
         width: 100%;
         min-width: 0;
     }
 
-    /* Textos das tarefas */
     section.grid h4 {
         overflow-wrap: break-word;
     }
 
-    /* Status das tarefas */
     section.grid span {
         max-width: 100%;
     }
 
-    /* Perfil */
     #perfilNome,
     #perfilEmail {
         overflow-wrap: anywhere;
@@ -239,34 +234,82 @@
 }
 
 
-/* ===== CELULARES PEQUENOS ===== */
+/* ========================================
+   CELULARES PEQUENOS
+======================================== */
 
 @media (max-width: 480px) {
 
-    /* Espaçamento dos blocos */
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    .card {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
     section.grid {
         gap: 1rem;
     }
 
-    /* Cards */
     section.grid > div {
         padding: 20px;
         border-radius: 22px;
     }
 
-    /* Título */
     section.grid h3 {
         font-size: 1.5rem;
     }
 
-    /* Última tarefa */
     section.grid .card h4 {
         font-size: 1rem;
     }
 
-    /* Botão do perfil */
     #btnEditarPerfil {
         width: 100%;
+    }
+
+    button {
+        max-width: 100%;
+    }
+
+}
+
+
+/* ========================================
+   SIDEBAR MOBILE - TAMANHO
+======================================== */
+
+@media (max-width: 768px) {
+
+    #sidebar:not(.hidden),
+    #sidebarTarefas:not(.hidden),
+    #sidebarMaterias:not(.hidden),
+    #sidebarCalendario:not(.hidden) {
+
+        width: min(300px, 85vw);
+    }
+
+}
+
+
+/* ========================================
+   SCROLLBAR MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    ::-webkit-scrollbar {
+        width: 6px;
     }
 
 }

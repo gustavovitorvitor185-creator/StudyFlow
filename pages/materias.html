@@ -1,323 +1,376 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Matérias | StudyFlow</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
 </head>
 
-<body class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 min-h-screen text-slate-100 font-sans overflow-hidden">
 
-  <!-- Glow -->
-  <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 blur-3xl rounded-full"></div>
-  <div class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full"></div>
+<body
+  class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 min-h-screen text-slate-100 font-sans overflow-x-hidden">
+
+
+  <!-- ========================================
+       GLOW EFFECTS
+  ========================================= -->
+
+  <div
+    class="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 blur-3xl rounded-full pointer-events-none">
+  </div>
+
+  <div
+    class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full pointer-events-none">
+  </div>
+
+
+
+  <!-- ========================================
+       LAYOUT PRINCIPAL
+  ========================================= -->
 
   <div class="flex min-h-screen relative z-10">
 
-    <!-- Sidebar -->
-    <aside class="w-72 bg-slate-900/70 backdrop-blur-xl border-r border-white/10 p-6 flex flex-col justify-between">
+
+
+    <!-- ========================================
+         MENU MOBILE
+    ========================================= -->
+
+    <div
+      class="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-slate-950/90 backdrop-blur-xl border-b border-white/10">
+
+
+      <div class="flex items-center gap-3">
+
+        <img
+          src="../assets/StudyFlow.png"
+          alt="StudyFlow"
+          class="w-12 h-12 object-contain">
+
+        <span
+          class="text-xl font-black bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+          StudyFlow
+        </span>
+
+      </div>
+
+
+      <button
+        id="btnMenuMaterias"
+        type="button"
+        class="bg-white/10 border border-white/10 px-4 py-2 rounded-xl text-xl hover:bg-white/10 transition">
+
+        ☰
+
+      </button>
+
+    </div>
+
+
+
+    <!-- ========================================
+         SIDEBAR
+    ========================================= -->
+
+    <aside
+      id="sidebarMaterias"
+      class="hidden lg:flex sidebar-desktop w-full lg:w-72 bg-slate-900/70 backdrop-blur-xl border-b lg:border-b-0 lg:border-r border-white/10 p-6 flex-col justify-between lg:min-h-screen">
+
+
+      <!-- CONTEÚDO DA SIDEBAR -->
 
       <div>
 
-        <!-- Logo -->
+
+        <!-- LOGO -->
+
         <div class="mb-12">
 
           <div class="flex items-center gap-3 mb-2">
 
             <img
-            src="../assets/StudyFlow.png"
-            alt="Logo do StudyFlow"
-            class="w-20 h-20 object-contain flex-shrink-0"
-        >
+              src="../assets/StudyFlow.png"
+              alt="Logo do StudyFlow"
+              class="w-20 h-20 object-contain flex-shrink-0">
+
 
             <div>
-              <h1 class="text-3xl font-black bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+
+              <h1
+                class="text-3xl font-black bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+
                 StudyFlow
+
               </h1>
+
 
               <p class="text-slate-400 text-sm">
                 Productivity Dashboard
               </p>
+
             </div>
+
           </div>
+
         </div>
 
-        <!-- Menu -->
+
+
+        <!-- ====================================
+             MENU
+        ===================================== -->
+
         <nav class="space-y-3">
 
-          <a href="dashboard.html"
+
+          <!-- Dashboard -->
+
+          <a
+            href="dashboard.html"
             class="block w-full hover:bg-white/5 transition rounded-2xl px-5 py-4 text-slate-300 border border-transparent hover:border-white/10">
+
             Dashboard
+
           </a>
 
-          <a href="tarefas.html"
+
+
+          <!-- Tarefas -->
+
+          <a
+            href="tarefas.html"
             class="block w-full hover:bg-white/5 transition rounded-2xl px-5 py-4 text-slate-300 border border-transparent hover:border-white/10">
+
             Tarefas
+
           </a>
 
-          <a href="materias.html"
+
+
+          <!-- Matérias -->
+
+          <a
+            href="materias.html"
             class="block w-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white rounded-2xl px-5 py-4 font-semibold shadow-xl shadow-blue-500/20">
+
             Matérias
+
           </a>
 
-          <a href="calendario.html"
+
+
+          <!-- Calendário -->
+
+          <a
+            href="calendario.html"
             class="block w-full hover:bg-white/5 transition rounded-2xl px-5 py-4 text-slate-300 border border-transparent hover:border-white/10">
+
             Calendário
+
           </a>
 
-          <a href="pomodoro.html"
+
+
+          <!-- Pomodoro -->
+
+          <a
+            href="pomodoro.html"
             class="block w-full hover:bg-white/5 transition rounded-2xl px-5 py-4 text-slate-300 border border-transparent hover:border-white/10">
+
             Pomodoro
+
           </a>
+
+
+
+          <!-- Sair -->
+
+          <a
+            href="#"
+            id="btnLogout"
+            class="block w-full hover:bg-red-500/10 transition rounded-2xl px-5 py-4 text-red-300 border border-transparent hover:border-red-500/20">
+
+            Sair
+
+          </a>
+
+
         </nav>
+
       </div>
 
-      <!-- Progress -->
-      <div class="bg-gradient-to-br from-blue-500/20 to-cyan-400/10 rounded-3xl p-5 border border-white/10 backdrop-blur-lg shadow-2xl shadow-blue-500/10">
+
+
+      <!-- ========================================
+           PROGRESSO
+      ========================================= -->
+
+      <div
+        class="bg-gradient-to-br from-blue-500/20 to-cyan-400/10 rounded-3xl p-5 border border-white/10 backdrop-blur-lg shadow-2xl shadow-blue-500/10">
+
 
         <div class="flex justify-between items-center mb-4">
-          <p class="text-sm text-slate-300">Seu progresso</p>
-          <span class="text-cyan-300 text-sm font-semibold">+12%</span>
+
+          <p class="text-sm text-slate-300">
+            Seu progresso
+          </p>
+
+
+          <span class="text-cyan-300 text-sm font-semibold">
+            +12%
+          </span>
+
         </div>
 
-        <h2 class="text-4xl font-black">78%</h2>
 
-        <div class="w-full h-3 bg-slate-700/50 rounded-full mt-5 overflow-hidden">
-          <div class="h-full w-[78%] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></div>
+        <h2 class="text-4xl font-black">
+          78%
+        </h2>
+
+
+        <div
+          class="w-full h-3 bg-slate-700/50 rounded-full mt-5 overflow-hidden">
+
+          <div
+            class="h-full w-[78%] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full">
+          </div>
+
         </div>
+
 
         <p class="text-slate-400 text-sm mt-4">
           Continue evoluindo 🚀
         </p>
+
       </div>
+
+
     </aside>
 
-    <!-- Main -->
-    <main class="flex-1 p-8 overflow-y-auto">
 
-      <!-- Header -->
-      <div class="flex items-center justify-between mb-10 flex-wrap gap-4">
+
+    <!-- ========================================
+         MAIN
+    ========================================= -->
+
+    <main
+      class="flex-1 p-4 md:p-8 pt-24 lg:pt-8 overflow-y-auto">
+
+
+      <!-- ========================================
+           HEADER
+      ========================================= -->
+
+      <div
+        class="flex items-center justify-between mb-10 flex-wrap gap-4">
+
 
         <div>
+
           <p class="text-cyan-300 font-medium mb-2">
-            Organize seus estudos 
+            Organize seus estudos
           </p>
 
-          <h2 class="text-5xl font-black leading-tight">
+
+          <h2 class="text-3xl md:text-5xl font-black leading-tight">
+
             Suas
-            <span class="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+
+            <span
+              class="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+
               matérias
+
             </span>
+
           </h2>
+
         </div>
+
+
+
+        <!-- NOVA MATÉRIA -->
 
         <button
-  id="btnNovaMateria"
-  class="bg-gradient-to-r from-blue-500 to-cyan-400 hover:scale-105 transition duration-300 px-7 py-4 rounded-2xl font-bold shadow-2xl shadow-blue-500/20">
-  + Nova matéria
+          id="btnNovaMateria"
+          type="button"
+          class="bg-gradient-to-r from-blue-500 to-cyan-400 hover:scale-105 transition duration-300 px-7 py-4 rounded-2xl font-bold shadow-2xl shadow-blue-500/20">
+
+          + Nova matéria
+
         </button>
+
+
       </div>
 
-      <!-- Subjects -->
-      <section id="listaMaterias" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
-        <!-- Matemática -->
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-7 shadow-2xl hover:-translate-y-1 transition duration-300">
 
-          <div class="flex items-center justify-between mb-6">
+      <!-- ========================================
+           LISTA DE MATÉRIAS
+      ========================================= -->
 
-            <div class="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center text-3xl">
-              📐
-            </div>
+      <section
+        id="listaMaterias"
+        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
-            <span class="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full text-sm">
-              85%
-            </span>
-          </div>
 
-          <h3 class="text-3xl font-black mb-2">
-            Matemática
-          </h3>
+        <!--
+          As matérias são carregadas pelo materias.js
+        -->
 
-          <p class="text-slate-400">
-            Álgebra, geometria e exercícios.
-          </p>
 
-          <div class="w-full h-3 bg-slate-700/50 rounded-full mt-6 overflow-hidden">
-            <div class="h-full w-[85%] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></div>
-          </div>
-
-          <div class="mt-6 flex justify-between text-sm text-slate-400">
-            <span>12 tarefas</span>
-            <span>5h estudadas</span>
-          </div>
-        </div>
-
-        <!-- Programação -->
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-7 shadow-2xl hover:-translate-y-1 transition duration-300">
-
-          <div class="flex items-center justify-between mb-6">
-
-            <div class="w-16 h-16 rounded-2xl bg-cyan-500/20 flex items-center justify-center text-3xl">
-              💻
-            </div>
-
-            <span class="bg-cyan-500/20 text-cyan-300 px-4 py-2 rounded-full text-sm">
-              72%
-            </span>
-          </div>
-
-          <h3 class="text-3xl font-black mb-2">
-            Programação
-          </h3>
-
-          <p class="text-slate-400">
-            HTML, CSS, JavaScript e lógica.
-          </p>
-
-          <div class="w-full h-3 bg-slate-700/50 rounded-full mt-6 overflow-hidden">
-            <div class="h-full w-[72%] bg-gradient-to-r from-cyan-500 to-blue-400 rounded-full"></div>
-          </div>
-
-          <div class="mt-6 flex justify-between text-sm text-slate-400">
-            <span>18 tarefas</span>
-            <span>8h estudadas</span>
-          </div>
-        </div>
-
-        <!-- História -->
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-7 shadow-2xl hover:-translate-y-1 transition duration-300">
-
-          <div class="flex items-center justify-between mb-6">
-
-            <div class="w-16 h-16 rounded-2xl bg-orange-500/20 flex items-center justify-center text-3xl">
-              📜
-            </div>
-
-            <span class="bg-orange-500/20 text-orange-300 px-4 py-2 rounded-full text-sm">
-              60%
-            </span>
-          </div>
-
-          <h3 class="text-3xl font-black mb-2">
-            História
-          </h3>
-
-          <p class="text-slate-400">
-            Revisões e atividades escolares.
-          </p>
-
-          <div class="w-full h-3 bg-slate-700/50 rounded-full mt-6 overflow-hidden">
-            <div class="h-full w-[60%] bg-gradient-to-r from-orange-500 to-yellow-400 rounded-full"></div>
-          </div>
-
-          <div class="mt-6 flex justify-between text-sm text-slate-400">
-            <span>7 tarefas</span>
-            <span>3h estudadas</span>
-          </div>
-        </div>
-
-        <!-- Inglês -->
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-7 shadow-2xl hover:-translate-y-1 transition duration-300">
-
-          <div class="flex items-center justify-between mb-6">
-
-            <div class="w-16 h-16 rounded-2xl bg-green-500/20 flex items-center justify-center text-3xl">
-              🌎
-            </div>
-
-            <span class="bg-green-500/20 text-green-300 px-4 py-2 rounded-full text-sm">
-              90%
-            </span>
-          </div>
-
-          <h3 class="text-3xl font-black mb-2">
-            Inglês
-          </h3>
-
-          <p class="text-slate-400">
-            Vocabulário e prática de leitura.
-          </p>
-
-          <div class="w-full h-3 bg-slate-700/50 rounded-full mt-6 overflow-hidden">
-            <div class="h-full w-[90%] bg-gradient-to-r from-green-500 to-emerald-400 rounded-full"></div>
-          </div>
-
-          <div class="mt-6 flex justify-between text-sm text-slate-400">
-            <span>10 tarefas</span>
-            <span>6h estudadas</span>
-          </div>
-        </div>
-
-        <!-- Física -->
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-7 shadow-2xl hover:-translate-y-1 transition duration-300">
-
-          <div class="flex items-center justify-between mb-6">
-
-            <div class="w-16 h-16 rounded-2xl bg-purple-500/20 flex items-center justify-center text-3xl">
-              ⚡
-            </div>
-
-            <span class="bg-purple-500/20 text-purple-300 px-4 py-2 rounded-full text-sm">
-              68%
-            </span>
-          </div>
-
-          <h3 class="text-3xl font-black mb-2">
-            Física
-          </h3>
-
-          <p class="text-slate-400">
-            Exercícios e fórmulas importantes.
-          </p>
-
-          <div class="w-full h-3 bg-slate-700/50 rounded-full mt-6 overflow-hidden">
-            <div class="h-full w-[68%] bg-gradient-to-r from-purple-500 to-pink-400 rounded-full"></div>
-          </div>
-
-          <div class="mt-6 flex justify-between text-sm text-slate-400">
-            <span>9 tarefas</span>
-            <span>4h estudadas</span>
-          </div>
-        </div>
-
-        <!-- Biologia -->
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-7 shadow-2xl hover:-translate-y-1 transition duration-300">
-
-          <div class="flex items-center justify-between mb-6">
-
-            <div class="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center text-3xl">
-              🧬
-            </div>
-
-            <span class="bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded-full text-sm">
-              74%
-            </span>
-          </div>
-
-          <h3 class="text-3xl font-black mb-2">
-            Biologia
-          </h3>
-
-          <p class="text-slate-400">
-            Resumos e mapas mentais.
-          </p>
-
-          <div class="w-full h-3 bg-slate-700/50 rounded-full mt-6 overflow-hidden">
-            <div class="h-full w-[74%] bg-gradient-to-r from-emerald-500 to-green-400 rounded-full"></div>
-          </div>
-
-          <div class="mt-6 flex justify-between text-sm text-slate-400">
-            <span>11 tarefas</span>
-            <span>5h estudadas</span>
-          </div>
-        </div>
       </section>
+
+
     </main>
+
+
   </div>
+
+
+
+  <!-- ========================================
+       SCRIPTS
+  ========================================= -->
+
   <script src="../js/materias.js"></script>
+  <script src="../js/auth.js"></script>
+
+
+  <!-- MENU MOBILE -->
+
+  <script>
+
+    const btnMenuMaterias =
+      document.getElementById("btnMenuMaterias");
+
+    const sidebarMaterias =
+      document.getElementById("sidebarMaterias");
+
+
+    if (btnMenuMaterias && sidebarMaterias) {
+
+      btnMenuMaterias.addEventListener("click", () => {
+
+        sidebarMaterias.classList.toggle("hidden");
+
+      });
+
+    }
+
+  </script>
+
+
 </body>
+
 </html>
