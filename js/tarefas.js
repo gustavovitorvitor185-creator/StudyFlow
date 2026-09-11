@@ -180,3 +180,18 @@ if (botaoNovaTarefa) {
 // ===== INICIALIZAÇÃO =====
 
 renderizarTarefas();
+
+// ===== MENU MOBILE =====
+
+const btnMenuTarefas = document.getElementById("btnMenuTarefas");
+const sidebarTarefas = document.getElementById("sidebarTarefas");
+
+if (btnMenuTarefas && sidebarTarefas) {
+
+    btnMenuTarefas.addEventListener("click", () => {
+
+        sidebarTarefas.classList.toggle("hidden");
+
+    });
+
+}

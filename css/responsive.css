@@ -4,66 +4,447 @@
 
 
 /* ========================================
-   SIDEBAR RETRÁTIL - DESKTOP
+   SIDEBAR DESKTOP
 ======================================== */
 
 @media (min-width: 1024px) {
 
-    .sidebar-desktop {
-        width: 72px !important;
-        min-width: 72px;
-        flex-shrink: 0;
-        overflow: hidden;
+    /* ------------------------------------
+       SIDEBAR FECHADA
+    ------------------------------------ */
 
-        transition:
-            width 0.3s ease,
-            min-width 0.3s ease;
+    .sidebar-desktop {
+        width: 76px !important;
+        min-width: 76px !important;
+        max-width: 76px !important;
+
+        flex-shrink: 0;
 
         position: relative;
+
+        overflow: hidden !important;
+
+        box-sizing: border-box;
+
+        transition:
+            width 0.28s ease,
+            min-width 0.28s ease,
+            max-width 0.28s ease;
     }
+
+
+    /* ------------------------------------
+       SIDEBAR ABERTA
+    ------------------------------------ */
 
     .sidebar-desktop:hover {
-        width: 288px !important;
-        min-width: 288px;
+        width: 250px !important;
+        min-width: 250px !important;
+        max-width: 250px !important;
     }
 
-    .sidebar-desktop > div {
+
+    /* ====================================
+       LOGO STUDYFLOW
+    ==================================== */
+
+    .brand-container {
+        width: 48px;
+        height: 48px;
+
+        margin: 0 auto 34px auto;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: flex-start;
+
+        position: relative;
+
+        overflow: hidden;
+
+        flex-shrink: 0;
+
+        transition:
+            width 0.28s ease,
+            margin 0.28s ease;
+    }
+
+
+    /*
+       A PNG possui:
+       símbolo + nome
+
+       Quando a sidebar está fechada,
+       mostramos somente a parte esquerda
+       da imagem.
+    */
+
+    .brand-logo {
+        width: 190px !important;
+        height: 48px !important;
+
+        max-width: none !important;
+        min-width: 190px !important;
+
+        display: block;
+
+        flex-shrink: 0;
+
+        object-fit: contain;
+
+        object-position: left center;
+
+        transform: translateX(0);
+
+        transition:
+            width 0.28s ease,
+            transform 0.28s ease;
+    }
+
+
+    /* ====================================
+       LOGO - SIDEBAR ABERTA
+    ==================================== */
+
+    .sidebar-desktop:hover .brand-container {
+        width: 190px;
+
+        height: 48px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        justify-content: center;
+
+        overflow: visible;
+    }
+
+
+    .sidebar-desktop:hover .brand-logo {
+        width: 190px !important;
+        height: 48px !important;
+
+        min-width: 190px !important;
+
+        object-fit: contain;
+
+        object-position: center;
+
+        transform: translateX(0);
+    }
+
+
+    /* ====================================
+       NAVEGAÇÃO
+    ==================================== */
+
+    .sidebar-nav {
+        width: 48px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 6px;
+
+        overflow: hidden;
+    }
+
+
+    .sidebar-desktop:hover .sidebar-nav {
+        width: 100%;
+
+        align-items: stretch;
+    }
+
+
+    /* ====================================
+       LINKS DA SIDEBAR FECHADA
+    ==================================== */
+
+    .sidebar-link {
+        width: 48px !important;
+        min-width: 48px !important;
+        max-width: 48px !important;
+
+        height: 48px !important;
+        min-height: 48px !important;
+        max-height: 48px !important;
+
+        padding: 0 !important;
+
+        margin: 0;
+
+        box-sizing: border-box;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 13px;
+
+        border-radius: 14px;
+
+        color: #94a3b8;
+
+        text-decoration: none;
+
+        border: 1px solid transparent;
+
+        overflow: hidden;
+
+        flex-shrink: 0;
+
+        transition:
+            width 0.28s ease,
+            min-width 0.28s ease,
+            max-width 0.28s ease,
+            background 0.2s ease,
+            color 0.2s ease,
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+
+    /* ====================================
+       LINKS DA SIDEBAR ABERTA
+    ==================================== */
+
+    .sidebar-desktop:hover .sidebar-link {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+
+        justify-content: flex-start;
+
+        padding: 0 14px !important;
+    }
+
+
+    /* ====================================
+       HOVER
+    ==================================== */
+
+    .sidebar-link:hover {
+        background: rgba(255, 255, 255, 0.055);
+
+        color: #e2e8f0;
+
+        border-color: rgba(255, 255, 255, 0.07);
+    }
+
+
+    /* ====================================
+       LINK ATIVO
+    ==================================== */
+
+    .sidebar-link-active {
+        background:
+            linear-gradient(
+                135deg,
+                #3b82f6,
+                #22d3ee
+            );
+
+        color: white;
+
+        border-color: transparent;
+
+        box-shadow:
+            0 8px 24px
+            rgba(59, 130, 246, 0.20);
+    }
+
+
+    .sidebar-link-active:hover {
+        background:
+            linear-gradient(
+                135deg,
+                #3b82f6,
+                #22d3ee
+            );
+
+        color: white;
+    }
+
+
+    /* ====================================
+       ÍCONES
+    ==================================== */
+
+    .sidebar-icon {
+        width: 21px !important;
+        height: 21px !important;
+
+        min-width: 21px !important;
+        max-width: 21px !important;
+
+        min-height: 21px !important;
+        max-height: 21px !important;
+
+        display: block;
+
+        flex-shrink: 0;
+
+        margin: 0;
+    }
+
+
+    /* ====================================
+       TEXTO DOS LINKS
+    ==================================== */
+
+    .sidebar-text {
+        display: none;
+
+        white-space: nowrap;
+
+        opacity: 0;
+
         transition: opacity 0.2s ease;
     }
 
-    .sidebar-desktop:not(:hover) > div {
-        opacity: 0;
-        pointer-events: none;
+
+    .sidebar-desktop:hover .sidebar-text {
+        display: block;
+
+        opacity: 1;
     }
 
-    .sidebar-desktop:hover > div {
+
+    /* ====================================
+       SAIR
+    ==================================== */
+
+    .sidebar-link-logout {
+        margin-top: 12px;
+
+        color: #fda4af;
+    }
+
+
+    .sidebar-link-logout:hover {
+        color: #fecdd3;
+
+        background:
+            rgba(244, 63, 94, 0.08);
+
+        border-color:
+            rgba(244, 63, 94, 0.12);
+    }
+
+
+    /* ====================================
+       TOOLTIP DOS ÍCONES
+    ==================================== */
+
+    .sidebar-link[title]::after {
+        content: attr(title);
+
+        position: fixed;
+
+        left: 88px;
+
+        transform: translateY(-50%);
+
+        background: #0f172a;
+
+        color: #e2e8f0;
+
+        border:
+            1px solid
+            rgba(255, 255, 255, 0.10);
+
+        padding: 7px 10px;
+
+        border-radius: 8px;
+
+        font-size: 0.78rem;
+
+        font-weight: 500;
+
+        white-space: nowrap;
+
+        opacity: 0;
+
+        pointer-events: none;
+
+        z-index: 999;
+
+        box-shadow:
+            0 10px 30px
+            rgba(0, 0, 0, 0.35);
+
+        transition:
+            opacity 0.15s ease;
+    }
+
+
+    .sidebar-desktop:not(:hover)
+    .sidebar-link[title]:hover::after {
         opacity: 1;
+    }
+
+
+    /* ====================================
+       CARD DE PROGRESSO DA SIDEBAR
+    ==================================== */
+
+    .sidebar-progress {
+        width: 48px !important;
+
+        min-width: 48px !important;
+        max-width: 48px !important;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(59, 130, 246, 0.13),
+                rgba(34, 211, 238, 0.06)
+            );
+
+        border:
+            1px solid
+            rgba(255, 255, 255, 0.08);
+
+        border-radius: 18px;
+
+        padding: 15px;
+
+        opacity: 0;
+
+        pointer-events: none;
+
+        transition:
+            opacity 0.2s ease,
+            width 0.28s ease;
+    }
+
+
+    .sidebar-desktop:hover .sidebar-progress {
+        width: 100% !important;
+
+        min-width: 0 !important;
+        max-width: none !important;
+
+        opacity: 1;
+
         pointer-events: auto;
     }
 
-    .sidebar-desktop::after {
-        content: "☰";
-
-        position: absolute;
-
-        top: 42%;
-        right: 50%;
-
-        transform: translate(50%, -50%);
-
-        font-size: 22px;
-
-        color: rgba(103, 232, 249, 0.8);
-
-        pointer-events: none;
-
-        transition: opacity 0.2s ease;
-    }
-
-    .sidebar-desktop:hover::after {
-        opacity: 0;
-    }
 }
+
 
 
 /* ========================================
@@ -76,48 +457,48 @@
         min-width: 0;
     }
 
+
     section {
         min-width: 0;
     }
 
-}
 
-
-/* ========================================
-   SIDEBAR - TABLET / CELULAR
-======================================== */
-
-@media (max-width: 1023px) {
-
-    /*
-       Todos os IDs de sidebar do StudyFlow
-       recebem o mesmo comportamento mobile.
-    */
+    /* ------------------------------------
+       SIDEBAR MOBILE
+    ------------------------------------ */
 
     #sidebar:not(.hidden),
     #sidebarTarefas:not(.hidden),
     #sidebarMaterias:not(.hidden),
-    #sidebarCalendario:not(.hidden) {
+    #sidebarCalendario:not(.hidden),
+    #sidebarPomodoro:not(.hidden) {
 
         position: fixed;
 
         top: 0;
         left: 0;
 
-        width: min(320px, 85vw);
+        width: min(300px, 85vw);
+
         height: 100vh;
 
         z-index: 50;
 
         overflow-y: auto;
 
-        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        border-right:
+            1px solid
+            rgba(255, 255, 255, 0.10);
+
         border-bottom: none;
 
-        box-shadow: 20px 0 50px rgba(0, 0, 0, 0.35);
+        box-shadow:
+            20px 0 50px
+            rgba(0, 0, 0, 0.35);
     }
 
 }
+
 
 
 /* ========================================
@@ -128,110 +509,134 @@
 
     html,
     body {
+
         width: 100%;
+
         max-width: 100%;
+
         overflow-x: hidden;
     }
 
+
     main {
+
         width: 100%;
+
         min-width: 0;
     }
+
 
     h1,
     h2,
     h3 {
+
         word-break: break-word;
     }
 
+
     .card {
+
         width: 100%;
+
         min-width: 0;
     }
 
+
     img {
+
         max-width: 100%;
+
         height: auto;
     }
 
+
     button,
     a {
+
         max-width: 100%;
     }
 
-}
 
-
-/* ========================================
-   DASHBOARD - CARDS RESPONSIVOS
-======================================== */
-
-@media (max-width: 768px) {
+    /* ====================================
+       DASHBOARD - GRID
+    ==================================== */
 
     section.grid {
+
         width: 100%;
+
         gap: 1rem;
+
         margin-bottom: 1.5rem;
     }
 
+
     section.grid > div {
+
         width: 100%;
+
         min-width: 0;
     }
 
+
     section.grid h3 {
+
         font-size: 1.75rem;
+
         line-height: 1.2;
     }
 
+
     section.grid p {
+
         max-width: 100%;
+
         overflow-wrap: break-word;
     }
 
-}
 
-
-/* ========================================
-   DASHBOARD - CONTEÚDO PRINCIPAL
-======================================== */
-
-@media (max-width: 768px) {
-
-    section.grid {
-        width: 100%;
-    }
-
-    section.grid > div {
-        width: 100%;
-        min-width: 0;
-    }
+    /* ====================================
+       DASHBOARD - CARDS
+    ==================================== */
 
     section.grid .card {
+
         width: 100%;
+
         padding: 18px;
+
         margin-top: 1rem;
     }
 
+
     section.grid .space-y-5 > div {
+
         width: 100%;
+
         min-width: 0;
     }
 
+
     section.grid h4 {
+
         overflow-wrap: break-word;
     }
 
+
     section.grid span {
+
         max-width: 100%;
     }
 
+
     #perfilNome,
     #perfilEmail {
+
         overflow-wrap: anywhere;
     }
 
 }
+
 
 
 /* ========================================
@@ -244,62 +649,78 @@
         font-size: 1.75rem;
     }
 
+
     h2 {
         font-size: 1.5rem;
     }
+
 
     h3 {
         font-size: 1.25rem;
     }
 
+
     .card {
+
         padding: 18px;
+
         border-radius: 20px;
     }
 
+
     section.grid {
+
         gap: 1rem;
     }
 
+
     section.grid > div {
+
         padding: 20px;
+
         border-radius: 22px;
     }
 
+
     section.grid h3 {
+
         font-size: 1.5rem;
     }
 
+
     section.grid .card h4 {
+
         font-size: 1rem;
     }
 
+
     #btnEditarPerfil {
+
         width: 100%;
     }
 
+
     button {
+
         max-width: 100%;
     }
 
-}
 
-
-/* ========================================
-   SIDEBAR MOBILE - TAMANHO
-======================================== */
-
-@media (max-width: 768px) {
+    /* ====================================
+       SIDEBAR MOBILE PEQUENA
+    ==================================== */
 
     #sidebar:not(.hidden),
     #sidebarTarefas:not(.hidden),
     #sidebarMaterias:not(.hidden),
-    #sidebarCalendario:not(.hidden) {
+    #sidebarCalendario:not(.hidden),
+    #sidebarPomodoro:not(.hidden) {
 
-        width: min(300px, 85vw);
+        width: min(280px, 88vw);
     }
 
 }
+
 
 
 /* ========================================
