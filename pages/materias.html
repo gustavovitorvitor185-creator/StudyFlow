@@ -2,374 +2,847 @@
 <html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matérias | StudyFlow</title>
 
-  <title>Matérias | StudyFlow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/responsive.css">
-
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 
-
 <body
-  class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 min-h-screen text-slate-100 font-sans overflow-x-hidden">
+    class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 min-h-screen text-slate-100 font-sans overflow-x-hidden">
 
+    <!-- GLOW -->
 
-  <!-- ========================================
-       GLOW EFFECTS
-  ========================================= -->
+    <div
+        class="fixed top-0 left-0 w-96 h-96 bg-blue-500/10 blur-3xl rounded-full pointer-events-none">
+    </div>
 
-  <div
-    class="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 blur-3xl rounded-full pointer-events-none">
-  </div>
-
-  <div
-    class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full pointer-events-none">
-  </div>
-
-
-
-  <!-- ========================================
-       LAYOUT PRINCIPAL
-  ========================================= -->
-
-  <div class="flex min-h-screen relative z-10">
-
+    <div
+        class="fixed bottom-0 right-0 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full pointer-events-none">
+    </div>
 
 
     <!-- ========================================
-         MENU MOBILE
-    ========================================= -->
+         LAYOUT
+    ======================================== -->
 
-    <div
-      class="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-slate-950/90 backdrop-blur-xl border-b border-white/10">
-
-
-      <div class="flex items-center gap-3">
-
-        <img
-          src="../assets/StudyFlow.png"
-          alt="StudyFlow"
-          class="w-12 h-12 object-contain">
-
-        <span
-          class="text-xl font-black bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-          StudyFlow
-        </span>
-
-      </div>
+    <div class="flex min-h-screen relative z-10">
 
 
-      <button
-        id="btnMenuMaterias"
-        type="button"
-        class="bg-white/10 border border-white/10 px-4 py-2 rounded-xl text-xl hover:bg-white/10 transition">
+        <!-- ========================================
+             MENU MOBILE
+        ======================================== -->
 
-        ☰
+        <div
+            class="lg:hidden fixed top-0 left-0 right-0 z-50
+                   flex items-center justify-between
+                   p-4
+                   bg-slate-950/90
+                   backdrop-blur-xl
+                   border-b border-white/10">
 
-      </button>
+            <div class="flex items-center gap-3">
+
+                <img
+                    src="../assets/StudyFlow.png"
+                    alt=""
+                    class="w-10 h-10 object-contain">
+
+                <span
+                    class="text-xl font-black
+                           bg-gradient-to-r
+                           from-blue-400
+                           to-cyan-300
+                           bg-clip-text
+                           text-transparent">
+
+                    StudyFlow
+
+                </span>
+
+            </div>
+
+
+            <button
+                id="btnMenuMaterias"
+                type="button"
+                aria-label="Abrir menu"
+                class="w-11 h-11
+                       flex items-center justify-center
+                       bg-white/5
+                       hover:bg-white/10
+                       border border-white/10
+                       rounded-xl
+                       transition">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    width="22"
+                    height="22"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round">
+
+                    <path d="M4 6h16"></path>
+                    <path d="M4 12h16"></path>
+                    <path d="M4 18h16"></path>
+
+                </svg>
+
+            </button>
+
+        </div>
+
+
+        <!-- ========================================
+             SIDEBAR
+        ======================================== -->
+
+        <aside
+            id="sidebarMaterias"
+            class="hidden lg:flex
+                   sidebar-desktop
+                   bg-slate-950/90
+                   backdrop-blur-xl
+                   border-r border-white/10
+                   p-6
+                   flex-col
+                   justify-between
+                   min-h-screen">
+
+
+            <!-- PARTE SUPERIOR -->
+
+            <div class="sidebar-content">
+
+
+                <!-- LOGO -->
+
+                <div class="brand-container">
+
+                    <img
+                        src="../assets/StudyFlow.png"
+                        alt=""
+                        class="brand-logo">
+
+                </div>
+
+
+                <!-- ========================================
+                     NAVEGAÇÃO
+                ======================================== -->
+
+                <nav class="sidebar-nav">
+
+
+                    <!-- DASHBOARD -->
+
+                    <a
+                        href="dashboard.html"
+                        class="sidebar-link"
+                        title="Dashboard">
+
+                        <svg
+                            class="sidebar-icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <path d="M3 11.5L12 4l9 7.5"></path>
+
+                            <path d="M5.5 10v9h13v-9"></path>
+
+                            <path d="M9.5 19v-5h5v5"></path>
+
+                        </svg>
+
+                        <span class="sidebar-text">
+                            Dashboard
+                        </span>
+
+                    </a>
+
+
+                    <!-- TAREFAS -->
+
+                    <a
+                        href="tarefas.html"
+                        class="sidebar-link"
+                        title="Tarefas">
+
+                        <svg
+                            class="sidebar-icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <rect
+                                x="4"
+                                y="3"
+                                width="16"
+                                height="18"
+                                rx="3">
+                            </rect>
+
+                            <path d="M8 8h.01"></path>
+
+                            <path d="M11 8h5"></path>
+
+                            <path d="M8 13l1.5 1.5L12 12"></path>
+
+                            <path d="M14 13h2"></path>
+
+                        </svg>
+
+                        <span class="sidebar-text">
+                            Tarefas
+                        </span>
+
+                    </a>
+
+
+                    <!-- MATÉRIAS - ATIVO -->
+
+                    <a
+                        href="materias.html"
+                        class="sidebar-link sidebar-link-active"
+                        title="Matérias">
+
+                        <svg
+                            class="sidebar-icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <path
+                                d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z">
+                            </path>
+
+                            <path
+                                d="M4 5.5A2.5 2.5 0 0 0 6.5 8H20">
+                            </path>
+
+                        </svg>
+
+                        <span class="sidebar-text">
+                            Matérias
+                        </span>
+
+                    </a>
+
+
+                    <!-- CALENDÁRIO -->
+
+                    <a
+                        href="calendario.html"
+                        class="sidebar-link"
+                        title="Calendário">
+
+                        <svg
+                            class="sidebar-icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <rect
+                                x="3"
+                                y="5"
+                                width="18"
+                                height="16"
+                                rx="3">
+                            </rect>
+
+                            <path d="M16 3v4"></path>
+
+                            <path d="M8 3v4"></path>
+
+                            <path d="M3 10h18"></path>
+
+                            <path d="M8 14h.01"></path>
+
+                            <path d="M12 14h.01"></path>
+
+                            <path d="M16 14h.01"></path>
+
+                        </svg>
+
+                        <span class="sidebar-text">
+                            Calendário
+                        </span>
+
+                    </a>
+
+
+                    <!-- POMODORO -->
+
+                    <a
+                        href="pomodoro.html"
+                        class="sidebar-link"
+                        title="Pomodoro">
+
+                        <svg
+                            class="sidebar-icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <circle
+                                cx="12"
+                                cy="13"
+                                r="7">
+                            </circle>
+
+                            <path d="M12 9v4l2.5 1.5"></path>
+
+                            <path d="M9 3h6"></path>
+
+                            <path d="M12 3v2"></path>
+
+                        </svg>
+
+                        <span class="sidebar-text">
+                            Pomodoro
+                        </span>
+
+                    </a>
+
+
+                    <!-- SAIR -->
+
+                    <a
+                        href="#"
+                        id="btnLogout"
+                        class="sidebar-link sidebar-link-logout"
+                        title="Sair">
+
+                        <svg
+                            class="sidebar-icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <path d="M10 17l5-5-5-5"></path>
+
+                            <path d="M15 12H3"></path>
+
+                            <path
+                                d="M14 4h5a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-5">
+                            </path>
+
+                        </svg>
+
+                        <span class="sidebar-text">
+                            Sair
+                        </span>
+
+                    </a>
+
+                </nav>
+
+            </div>
+
+
+            <!-- ========================================
+                 PROGRESSO
+            ======================================== -->
+
+            <div class="sidebar-progress">
+
+
+                <div class="flex justify-between items-center mb-3">
+
+                    <p class="text-sm text-slate-400">
+                        Progresso
+                    </p>
+
+                    <span class="text-cyan-300 text-sm font-semibold">
+                        75%
+                    </span>
+
+                </div>
+
+
+                <h2 class="text-3xl font-black">
+                    15/20
+                </h2>
+
+
+                <div
+                    class="w-full h-2
+                           bg-slate-700/50
+                           rounded-full
+                           mt-4
+                           overflow-hidden">
+
+                    <div
+                        class="h-full w-[75%]
+                               bg-gradient-to-r
+                               from-blue-500
+                               to-cyan-400
+                               rounded-full">
+                    </div>
+
+                </div>
+
+
+                <p class="text-slate-500 text-xs mt-3">
+                    Você está quase terminando
+                </p>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ========================================
+             CONTEÚDO PRINCIPAL
+        ======================================== -->
+
+        <main
+            class="flex-1
+                   min-w-0
+                   p-4 md:p-8
+                   pt-24 lg:pt-8
+                   overflow-y-auto">
+
+
+            <!-- CABEÇALHO -->
+
+            <div
+                class="flex
+                       items-center
+                       justify-between
+                       mb-10
+                       flex-wrap
+                       gap-4">
+
+                <div>
+
+                    <p class="text-cyan-300 font-medium mb-2">
+                        Organize seus estudos
+                    </p>
+
+                    <h1
+                        class="text-3xl
+                               md:text-5xl
+                               font-black
+                               leading-tight">
+
+                        Suas
+
+                        <span
+                            class="bg-gradient-to-r
+                                   from-blue-400
+                                   to-cyan-300
+                                   bg-clip-text
+                                   text-transparent">
+
+                            matérias
+
+                        </span>
+
+                    </h1>
+
+                </div>
+
+
+                <!-- NOVA MATÉRIA -->
+
+                <button
+                    id="btnNovaMateria"
+                    type="button"
+                    class="w-full
+                           sm:w-auto
+                           bg-gradient-to-r
+                           from-blue-500
+                           to-cyan-400
+                           hover:scale-[1.02]
+                           transition
+                           duration-300
+                           px-7
+                           py-4
+                           rounded-2xl
+                           font-bold
+                           shadow-2xl
+                           shadow-blue-500/20">
+
+                    + Nova matéria
+
+                </button>
+
+            </div>
+
+
+            <!-- ========================================
+                 MATÉRIAS
+            ======================================== -->
+
+            <section
+                id="listaMaterias"
+                class="grid
+                       grid-cols-1
+                       md:grid-cols-2
+                       xl:grid-cols-3
+                       gap-6">
+
+
+                <!-- MATEMÁTICA -->
+
+                <div
+                    class="bg-white/5
+                           backdrop-blur-xl
+                           border border-white/10
+                           rounded-3xl
+                           p-7
+                           shadow-2xl
+                           hover:-translate-y-1
+                           transition
+                           duration-300">
+
+                    <div
+                        class="flex
+                               items-center
+                               justify-between
+                               mb-6">
+
+                        <div
+                            class="w-16
+                                   h-16
+                                   rounded-2xl
+                                   bg-blue-500/20
+                                   flex
+                                   items-center
+                                   justify-center
+                                   text-3xl">
+
+                            📐
+
+                        </div>
+
+
+                        <span
+                            class="bg-blue-500/20
+                                   text-blue-300
+                                   px-4
+                                   py-2
+                                   rounded-full
+                                   text-sm">
+
+                            85%
+
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="text-3xl font-black mb-2">
+                        Matemática
+                    </h3>
+
+
+                    <p class="text-slate-400">
+                        Álgebra, geometria e exercícios.
+                    </p>
+
+
+                    <div
+                        class="w-full
+                               h-3
+                               bg-slate-700/50
+                               rounded-full
+                               mt-6
+                               overflow-hidden">
+
+                        <div
+                            class="h-full
+                                   w-[85%]
+                                   bg-gradient-to-r
+                                   from-blue-500
+                                   to-cyan-400
+                                   rounded-full">
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="mt-6
+                               flex
+                               justify-between
+                               text-sm
+                               text-slate-400">
+
+                        <span>
+                            12 tarefas
+                        </span>
+
+                        <span>
+                            85%
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PORTUGUÊS -->
+
+                <div
+                    class="bg-white/5
+                           backdrop-blur-xl
+                           border border-white/10
+                           rounded-3xl
+                           p-7
+                           shadow-2xl
+                           hover:-translate-y-1
+                           transition
+                           duration-300">
+
+                    <div
+                        class="flex
+                               items-center
+                               justify-between
+                               mb-6">
+
+                        <div
+                            class="w-16
+                                   h-16
+                                   rounded-2xl
+                                   bg-purple-500/20
+                                   flex
+                                   items-center
+                                   justify-center
+                                   text-3xl">
+
+                            📚
+
+                        </div>
+
+
+                        <span
+                            class="bg-purple-500/20
+                                   text-purple-300
+                                   px-4
+                                   py-2
+                                   rounded-full
+                                   text-sm">
+
+                            72%
+
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="text-3xl font-black mb-2">
+                        Português
+                    </h3>
+
+
+                    <p class="text-slate-400">
+                        Gramática, literatura e redação.
+                    </p>
+
+
+                    <div
+                        class="w-full
+                               h-3
+                               bg-slate-700/50
+                               rounded-full
+                               mt-6
+                               overflow-hidden">
+
+                        <div
+                            class="h-full
+                                   w-[72%]
+                                   bg-gradient-to-r
+                                   from-purple-500
+                                   to-pink-400
+                                   rounded-full">
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="mt-6
+                               flex
+                               justify-between
+                               text-sm
+                               text-slate-400">
+
+                        <span>
+                            9 tarefas
+                        </span>
+
+                        <span>
+                            72%
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FÍSICA -->
+
+                <div
+                    class="bg-white/5
+                           backdrop-blur-xl
+                           border border-white/10
+                           rounded-3xl
+                           p-7
+                           shadow-2xl
+                           hover:-translate-y-1
+                           transition
+                           duration-300">
+
+                    <div
+                        class="flex
+                               items-center
+                               justify-between
+                               mb-6">
+
+                        <div
+                            class="w-16
+                                   h-16
+                                   rounded-2xl
+                                   bg-cyan-500/20
+                                   flex
+                                   items-center
+                                   justify-center
+                                   text-3xl">
+
+                            ⚡
+
+                        </div>
+
+
+                        <span
+                            class="bg-cyan-500/20
+                                   text-cyan-300
+                                   px-4
+                                   py-2
+                                   rounded-full
+                                   text-sm">
+
+                            64%
+
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="text-3xl font-black mb-2">
+                        Física
+                    </h3>
+
+
+                    <p class="text-slate-400">
+                        Mecânica, energia e eletricidade.
+                    </p>
+
+
+                    <div
+                        class="w-full
+                               h-3
+                               bg-slate-700/50
+                               rounded-full
+                               mt-6
+                               overflow-hidden">
+
+                        <div
+                            class="h-full
+                                   w-[64%]
+                                   bg-gradient-to-r
+                                   from-cyan-500
+                                   to-blue-400
+                                   rounded-full">
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="mt-6
+                               flex
+                               justify-between
+                               text-sm
+                               text-slate-400">
+
+                        <span>
+                            7 tarefas
+                        </span>
+
+                        <span>
+                            64%
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
 
     </div>
 
 
-
     <!-- ========================================
-         SIDEBAR
-    ========================================= -->
+         SCRIPTS
+    ======================================== -->
 
-    <aside
-      id="sidebarMaterias"
-      class="hidden lg:flex sidebar-desktop w-full lg:w-72 bg-slate-900/70 backdrop-blur-xl border-b lg:border-b-0 lg:border-r border-white/10 p-6 flex-col justify-between lg:min-h-screen">
+    <script src="../js/materias.js"></script>
+    <script src="../js/auth.js"></script>
 
 
-      <!-- CONTEÚDO DA SIDEBAR -->
+    <!-- MENU MOBILE -->
 
-      <div>
+    <script>
 
+        const btnMenuMaterias =
+            document.getElementById("btnMenuMaterias");
 
-        <!-- LOGO -->
+        const sidebarMaterias =
+            document.getElementById("sidebarMaterias");
 
-        <div class="mb-12">
 
-          <div class="flex items-center gap-3 mb-2">
+        if (btnMenuMaterias && sidebarMaterias) {
 
-            <img
-              src="../assets/StudyFlow.png"
-              alt="Logo do StudyFlow"
-              class="w-20 h-20 object-contain flex-shrink-0">
+            btnMenuMaterias.addEventListener("click", () => {
 
+                sidebarMaterias.classList.toggle("hidden");
 
-            <div>
+            });
 
-              <h1
-                class="text-3xl font-black bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+        }
 
-                StudyFlow
-
-              </h1>
-
-
-              <p class="text-slate-400 text-sm">
-                Productivity Dashboard
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- ====================================
-             MENU
-        ===================================== -->
-
-        <nav class="space-y-3">
-
-
-          <!-- Dashboard -->
-
-          <a
-            href="dashboard.html"
-            class="block w-full hover:bg-white/5 transition rounded-2xl px-5 py-4 text-slate-300 border border-transparent hover:border-white/10">
-
-            Dashboard
-
-          </a>
-
-
-
-          <!-- Tarefas -->
-
-          <a
-            href="tarefas.html"
-            class="block w-full hover:bg-white/5 transition rounded-2xl px-5 py-4 text-slate-300 border border-transparent hover:border-white/10">
-
-            Tarefas
-
-          </a>
-
-
-
-          <!-- Matérias -->
-
-          <a
-            href="materias.html"
-            class="block w-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white rounded-2xl px-5 py-4 font-semibold shadow-xl shadow-blue-500/20">
-
-            Matérias
-
-          </a>
-
-
-
-          <!-- Calendário -->
-
-          <a
-            href="calendario.html"
-            class="block w-full hover:bg-white/5 transition rounded-2xl px-5 py-4 text-slate-300 border border-transparent hover:border-white/10">
-
-            Calendário
-
-          </a>
-
-
-
-          <!-- Pomodoro -->
-
-          <a
-            href="pomodoro.html"
-            class="block w-full hover:bg-white/5 transition rounded-2xl px-5 py-4 text-slate-300 border border-transparent hover:border-white/10">
-
-            Pomodoro
-
-          </a>
-
-
-
-          <!-- Sair -->
-
-          <a
-            href="#"
-            id="btnLogout"
-            class="block w-full hover:bg-red-500/10 transition rounded-2xl px-5 py-4 text-red-300 border border-transparent hover:border-red-500/20">
-
-            Sair
-
-          </a>
-
-
-        </nav>
-
-      </div>
-
-
-
-      <!-- ========================================
-           PROGRESSO
-      ========================================= -->
-
-      <div
-        class="bg-gradient-to-br from-blue-500/20 to-cyan-400/10 rounded-3xl p-5 border border-white/10 backdrop-blur-lg shadow-2xl shadow-blue-500/10">
-
-
-        <div class="flex justify-between items-center mb-4">
-
-          <p class="text-sm text-slate-300">
-            Seu progresso
-          </p>
-
-
-          <span class="text-cyan-300 text-sm font-semibold">
-            +12%
-          </span>
-
-        </div>
-
-
-        <h2 class="text-4xl font-black">
-          78%
-        </h2>
-
-
-        <div
-          class="w-full h-3 bg-slate-700/50 rounded-full mt-5 overflow-hidden">
-
-          <div
-            class="h-full w-[78%] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full">
-          </div>
-
-        </div>
-
-
-        <p class="text-slate-400 text-sm mt-4">
-          Continue evoluindo 🚀
-        </p>
-
-      </div>
-
-
-    </aside>
-
-
-
-    <!-- ========================================
-         MAIN
-    ========================================= -->
-
-    <main
-      class="flex-1 p-4 md:p-8 pt-24 lg:pt-8 overflow-y-auto">
-
-
-      <!-- ========================================
-           HEADER
-      ========================================= -->
-
-      <div
-        class="flex items-center justify-between mb-10 flex-wrap gap-4">
-
-
-        <div>
-
-          <p class="text-cyan-300 font-medium mb-2">
-            Organize seus estudos
-          </p>
-
-
-          <h2 class="text-3xl md:text-5xl font-black leading-tight">
-
-            Suas
-
-            <span
-              class="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-
-              matérias
-
-            </span>
-
-          </h2>
-
-        </div>
-
-
-
-        <!-- NOVA MATÉRIA -->
-
-        <button
-          id="btnNovaMateria"
-          type="button"
-          class="bg-gradient-to-r from-blue-500 to-cyan-400 hover:scale-105 transition duration-300 px-7 py-4 rounded-2xl font-bold shadow-2xl shadow-blue-500/20">
-
-          + Nova matéria
-
-        </button>
-
-
-      </div>
-
-
-
-      <!-- ========================================
-           LISTA DE MATÉRIAS
-      ========================================= -->
-
-      <section
-        id="listaMaterias"
-        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-
-
-        <!--
-          As matérias são carregadas pelo materias.js
-        -->
-
-
-      </section>
-
-
-    </main>
-
-
-  </div>
-
-
-
-  <!-- ========================================
-       SCRIPTS
-  ========================================= -->
-
-  <script src="../js/materias.js"></script>
-  <script src="../js/auth.js"></script>
-
-
-  <!-- MENU MOBILE -->
-
-  <script>
-
-    const btnMenuMaterias =
-      document.getElementById("btnMenuMaterias");
-
-    const sidebarMaterias =
-      document.getElementById("sidebarMaterias");
-
-
-    if (btnMenuMaterias && sidebarMaterias) {
-
-      btnMenuMaterias.addEventListener("click", () => {
-
-        sidebarMaterias.classList.toggle("hidden");
-
-      });
-
-    }
-
-  </script>
-
+    </script>
 
 </body>
 
