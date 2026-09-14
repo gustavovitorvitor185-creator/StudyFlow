@@ -2,21 +2,35 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Pomodoro | StudyFlow</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css">
+
 </head>
+
 
 <body
     class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 min-h-screen text-slate-100 font-sans overflow-x-hidden">
 
-    <!-- GLOW -->
+
+    <!-- ========================================
+         EFEITOS DE FUNDO
+    ========================================= -->
 
     <div
         class="fixed top-0 left-0 w-96 h-96 bg-blue-500/10 blur-3xl rounded-full pointer-events-none">
@@ -27,87 +41,22 @@
     </div>
 
 
+
     <!-- ========================================
          LAYOUT
-    ======================================== -->
+    ========================================= -->
 
     <div class="flex min-h-screen relative z-10">
 
 
-        <!-- ========================================
-             MENU MOBILE
-        ======================================== -->
-
-        <div
-            class="lg:hidden fixed top-0 left-0 right-0 z-50
-                   flex items-center justify-between
-                   p-4
-                   bg-slate-950/90
-                   backdrop-blur-xl
-                   border-b border-white/10">
-
-            <div class="flex items-center gap-3">
-
-                <img
-                    src="../assets/StudyFlow.png"
-                    alt=""
-                    class="w-10 h-10 object-contain">
-
-                <span
-                    class="text-xl font-black
-                           bg-gradient-to-r
-                           from-blue-400
-                           to-cyan-300
-                           bg-clip-text
-                           text-transparent">
-
-                    StudyFlow
-
-                </span>
-
-            </div>
-
-
-            <button
-                id="btnMenuPomodoro"
-                type="button"
-                aria-label="Abrir menu"
-                class="w-11 h-11
-                       flex items-center justify-center
-                       bg-white/5
-                       hover:bg-white/10
-                       border border-white/10
-                       rounded-xl
-                       transition">
-
-                <svg
-                    viewBox="0 0 24 24"
-                    width="22"
-                    height="22"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round">
-
-                    <path d="M4 6h16"></path>
-                    <path d="M4 12h16"></path>
-                    <path d="M4 18h16"></path>
-
-                </svg>
-
-            </button>
-
-        </div>
-
 
         <!-- ========================================
              SIDEBAR
-        ======================================== -->
+        ========================================= -->
 
         <aside
             id="sidebarPomodoro"
-            class="hidden lg:flex
-                   sidebar-desktop
+            class="hidden lg:flex sidebar-desktop
                    bg-slate-950/90
                    backdrop-blur-xl
                    border-r border-white/10
@@ -117,26 +66,35 @@
                    min-h-screen">
 
 
-            <!-- PARTE SUPERIOR -->
+            <!-- ====================================
+                 PARTE SUPERIOR
+            ==================================== -->
 
             <div class="sidebar-content">
 
 
-                <!-- LOGO -->
+                <!-- ====================================
+                     MARCA
+                ==================================== -->
 
                 <div class="brand-container">
 
-                    <img
-                        src="../assets/StudyFlow.png"
-                        alt=""
-                        class="brand-logo">
+                    <div class="brand">
+
+                        <img
+                            src="../assets/StudyFlow.png"
+                            alt=""
+                            class="brand-logo">
+
+                    </div>
 
                 </div>
 
 
-                <!-- ========================================
+
+                <!-- ====================================
                      NAVEGAÇÃO
-                ======================================== -->
+                ==================================== -->
 
                 <nav class="sidebar-nav">
 
@@ -170,6 +128,7 @@
                         </span>
 
                     </a>
+
 
 
                     <!-- TAREFAS -->
@@ -213,6 +172,7 @@
                     </a>
 
 
+
                     <!-- MATÉRIAS -->
 
                     <a
@@ -229,13 +189,9 @@
                             stroke-linecap="round"
                             stroke-linejoin="round">
 
-                            <path
-                                d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z">
-                            </path>
+                            <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z"></path>
 
-                            <path
-                                d="M4 5.5A2.5 2.5 0 0 0 6.5 8H20">
-                            </path>
+                            <path d="M4 5.5A2.5 2.5 0 0 0 6.5 8H20"></path>
 
                         </svg>
 
@@ -244,6 +200,7 @@
                         </span>
 
                     </a>
+
 
 
                     <!-- CALENDÁRIO -->
@@ -291,7 +248,8 @@
                     </a>
 
 
-                    <!-- POMODORO - ATIVO -->
+
+                    <!-- POMODORO -->
 
                     <a
                         href="pomodoro.html"
@@ -328,6 +286,7 @@
                     </a>
 
 
+
                     <!-- SAIR -->
 
                     <a
@@ -349,9 +308,7 @@
 
                             <path d="M15 12H3"></path>
 
-                            <path
-                                d="M14 4h5a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-5">
-                            </path>
+                            <path d="M14 4h5a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-5"></path>
 
                         </svg>
 
@@ -366,11 +323,13 @@
             </div>
 
 
+
             <!-- ========================================
                  PROGRESSO
-            ======================================== -->
+            ========================================= -->
 
             <div class="sidebar-progress">
+
 
                 <div class="flex justify-between items-center mb-3">
 
@@ -391,18 +350,10 @@
 
 
                 <div
-                    class="w-full h-2
-                           bg-slate-700/50
-                           rounded-full
-                           mt-4
-                           overflow-hidden">
+                    class="w-full h-2 bg-slate-700/50 rounded-full mt-4 overflow-hidden">
 
                     <div
-                        class="h-full w-[75%]
-                               bg-gradient-to-r
-                               from-blue-500
-                               to-cyan-400
-                               rounded-full">
+                        class="h-full w-[75%] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full">
                     </div>
 
                 </div>
@@ -417,185 +368,176 @@
         </aside>
 
 
+
         <!-- ========================================
              CONTEÚDO PRINCIPAL
-        ======================================== -->
+        ========================================= -->
 
         <main
-            class="flex-1
-                   min-w-0
-                   p-4 md:p-8
-                   pt-24 lg:pt-8
-                   overflow-y-auto">
+            class="flex-1 min-w-0 p-4 md:p-8 pt-24 lg:pt-8 overflow-y-auto">
 
 
-            <!-- CABEÇALHO -->
 
-            <div class="mb-10">
+            <!-- ========================================
+                 HEADER MOBILE
+            ========================================= -->
 
-                <p class="text-cyan-300 font-medium mb-2">
-                    Foque no que realmente importa
-                </p>
+            <div
+                class="lg:hidden flex justify-between items-center mb-8">
 
-                <h1
-                    class="text-3xl
-                           md:text-5xl
-                           font-black
-                           leading-tight">
+                <div class="flex items-center gap-2">
 
-                    Técnica
+                    <img
+                        src="../assets/StudyFlow.png"
+                        alt=""
+                        class="w-10 h-10 object-contain">
 
                     <span
-                        class="bg-gradient-to-r
-                               from-blue-400
-                               to-cyan-300
-                               bg-clip-text
-                               text-transparent">
+                        class="text-xl font-bold tracking-tight">
 
-                        Pomodoro
+                        Study<span class="text-cyan-300">Flow</span>
 
                     </span>
 
-                </h1>
+                </div>
 
-                <p class="text-slate-400 mt-3 max-w-2xl">
-                    Estude em períodos de foco e faça pausas estratégicas
-                    para manter sua produtividade.
-                </p>
+
+                <button
+                    id="btnMenuPomodoro"
+                    type="button"
+                    class="w-11 h-11 flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-lg transition">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        width="22"
+                        height="22"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round">
+
+                        <path d="M4 6h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M4 18h16"></path>
+
+                    </svg>
+
+                </button>
 
             </div>
 
 
+
             <!-- ========================================
-                 ÁREA PRINCIPAL
-            ======================================== -->
+                 CABEÇALHO
+            ========================================= -->
 
             <div
-                class="grid
-                       grid-cols-1
-                       xl:grid-cols-3
-                       gap-6">
+                class="flex items-center justify-between mb-10 flex-wrap gap-4">
 
 
-                <!-- ========================================
-                     TIMER
-                ======================================== -->
+                <div>
 
-                <section
-                    class="xl:col-span-2
-                           bg-white/5
-                           backdrop-blur-xl
-                           border border-white/10
-                           rounded-3xl
-                           p-6 md:p-10
-                           shadow-2xl
-                           flex
-                           flex-col
-                           items-center
-                           justify-center">
+                    <p
+                        class="text-cyan-300 font-medium mb-2">
+
+                        Hora de focar
+
+                    </p>
 
 
-                    <!-- STATUS -->
+                    <h2
+                        class="text-3xl md:text-5xl font-black leading-tight">
 
-                    <div
-                        class="flex
-                               items-center
-                               gap-2
-                               mb-8
-                               bg-blue-500/10
-                               border border-blue-400/20
-                               px-4
-                               py-2
-                               rounded-full">
+                        Técnica
 
                         <span
-                            class="w-2
-                                   h-2
-                                   bg-cyan-400
-                                   rounded-full
-                                   animate-pulse">
+                            class="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+
+                            Pomodoro
+
                         </span>
 
-                        <span class="text-cyan-300 text-sm font-semibold">
-                            Hora de focar
-                        </span>
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="w-full md:w-auto bg-gradient-to-r from-blue-500 to-cyan-400 hover:scale-105 transition duration-300 px-7 py-4 rounded-2xl font-bold shadow-2xl shadow-blue-500/20">
+
+                    Histórico
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 TIMER + DESEMPENHO
+            ========================================= -->
+
+            <section
+                class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+
+
+                <!-- TIMER -->
+
+                <div
+                    class="xl:col-span-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-5 md:p-10 shadow-2xl flex flex-col items-center justify-center">
+
+
+                    <p
+                        class="text-cyan-300 text-sm font-semibold mb-6">
+
+                        • Hora de focar
+
+                    </p>
+
+
+                    <div class="text-center">
+
+                        <h1
+                            id="timer"
+                            class="text-6xl sm:text-7xl md:text-8xl font-black bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+
+                            25:00
+
+                        </h1>
 
                     </div>
 
 
-                    <!-- TIMER -->
+
+                    <!-- MODOS -->
 
                     <div
-                        id="timer"
-                        class="text-7xl
-                               sm:text-8xl
-                               md:text-9xl
-                               font-black
-                               tracking-tight
-                               bg-gradient-to-r
-                               from-blue-400
-                               to-cyan-300
-                               bg-clip-text
-                               text-transparent
-                               select-none">
+                        class="flex flex-wrap justify-center gap-3 md:gap-4 mt-8">
 
-                        25:00
-
-                    </div>
-
-
-                    <!-- MODO -->
-
-                    <div
-                        class="flex
-                               flex-wrap
-                               justify-center
-                               gap-3
-                               mt-8">
 
                         <button
                             type="button"
-                            class="px-5
-                                   py-2
-                                   rounded-xl
-                                   bg-blue-500/20
-                                   border border-blue-400/30
-                                   text-blue-300
-                                   font-semibold
-                                   transition
-                                   hover:bg-blue-500/30">
+                            class="bg-blue-500/20 border border-blue-500/20 text-blue-300 px-5 md:px-6 py-3 rounded-2xl font-semibold">
 
                             Foco
 
                         </button>
 
+
                         <button
                             type="button"
-                            class="px-5
-                                   py-2
-                                   rounded-xl
-                                   bg-white/5
-                                   border border-white/10
-                                   text-slate-400
-                                   font-semibold
-                                   transition
-                                   hover:bg-white/10">
+                            class="bg-white/5 border border-white/10 px-5 md:px-6 py-3 rounded-2xl font-semibold hover:bg-white/10 transition">
 
                             Pausa curta
 
                         </button>
 
+
                         <button
                             type="button"
-                            class="px-5
-                                   py-2
-                                   rounded-xl
-                                   bg-white/5
-                                   border border-white/10
-                                   text-slate-400
-                                   font-semibold
-                                   transition
-                                   hover:bg-white/10">
+                            class="bg-white/5 border border-white/10 px-5 md:px-6 py-3 rounded-2xl font-semibold hover:bg-white/10 transition">
 
                             Pausa longa
 
@@ -604,31 +546,19 @@
                     </div>
 
 
-                    <!-- CONTROLES -->
+
+                    <!-- BOTÕES -->
 
                     <div
-                        class="flex
-                               flex-wrap
-                               justify-center
-                               gap-4
-                               mt-10">
+                        class="flex flex-wrap justify-center gap-3 md:gap-4 mt-10">
+
 
                         <button
                             id="btnIniciar"
                             type="button"
-                            class="bg-gradient-to-r
-                                   from-blue-500
-                                   to-cyan-400
-                                   hover:scale-105
-                                   transition
-                                   px-8
-                                   py-4
-                                   rounded-2xl
-                                   font-bold
-                                   shadow-xl
-                                   shadow-blue-500/20">
+                            class="bg-gradient-to-r from-blue-500 to-cyan-400 px-6 md:px-8 py-3 md:py-4 rounded-2xl font-bold text-base md:text-lg shadow-2xl shadow-blue-500/20 hover:scale-105 transition">
 
-                             Iniciar
+                            Iniciar
 
                         </button>
 
@@ -636,16 +566,9 @@
                         <button
                             id="btnPausar"
                             type="button"
-                            class="bg-white/5
-                                   hover:bg-white/10
-                                   border border-white/10
-                                   transition
-                                   px-8
-                                   py-4
-                                   rounded-2xl
-                                   font-bold">
+                            class="bg-white/5 border border-white/10 px-6 md:px-8 py-3 md:py-4 rounded-2xl font-bold text-base md:text-lg hover:bg-white/10 transition">
 
-                             Pausar
+                            Pausar
 
                         </button>
 
@@ -653,194 +576,343 @@
                         <button
                             id="btnResetar"
                             type="button"
-                            class="bg-white/5
-                                   hover:bg-white/10
-                                   border border-white/10
-                                   transition
-                                   px-8
-                                   py-4
-                                   rounded-2xl
-                                   font-bold">
+                            class="bg-red-500/20 border border-red-500/20 text-red-300 px-6 md:px-8 py-3 md:py-4 rounded-2xl font-bold text-base md:text-lg hover:bg-red-500/30 transition">
 
-                            ↻ Resetar
+                            ⟳ Resetar
 
                         </button>
 
                     </div>
 
-                </section>
+                </div>
 
 
-                <!-- ========================================
-                     ESTATÍSTICAS
-                ======================================== -->
 
-                <section
-                    class="bg-white/5
-                           backdrop-blur-xl
-                           border border-white/10
-                           rounded-3xl
-                           p-6
-                           shadow-2xl">
+                <!-- DESEMPENHO -->
+
+                <div
+                    class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-5 md:p-7 shadow-2xl">
 
 
-                    <h2 class="text-2xl font-black mb-6">
+                    <h3
+                        class="text-2xl font-black mb-6">
+
                         Seu desempenho
-                    </h2>
+
+                    </h3>
 
 
-                    <!-- TEMPO -->
-
-                    <div
-                        class="bg-white/5
-                               border border-white/10
-                               rounded-2xl
-                               p-5
-                               mb-4">
-
-                        <p class="text-slate-400 text-sm">
-                            Tempo focado hoje
-                        </p>
-
-                        <h3
-                            class="text-3xl
-                                   font-black
-                                   mt-2">
-
-                            00h 00min
-
-                        </h3>
-
-                    </div>
+                    <div class="space-y-5">
 
 
-                    <!-- SESSÕES -->
-
-                    <div
-                        class="bg-white/5
-                               border border-white/10
-                               rounded-2xl
-                               p-5
-                               mb-4">
-
-                        <p class="text-slate-400 text-sm">
-                            Sessões concluídas
-                        </p>
-
-                        <h3
-                            class="text-3xl
-                                   font-black
-                                   mt-2">
-
-                            0
-
-                        </h3>
-
-                    </div>
-
-
-                    <!-- META -->
-
-                    <div
-                        class="bg-gradient-to-br
-                               from-blue-500/10
-                               to-cyan-400/10
-                               border border-blue-400/20
-                               rounded-2xl
-                               p-5">
-
-                        <p class="text-slate-400 text-sm">
-                            Meta diária
-                        </p>
-
-                        <h3
-                            class="text-3xl
-                                   font-black
-                                   mt-2">
-
-                            2h
-
-                        </h3>
+                        <!-- TEMPO FOCADO -->
 
                         <div
-                            class="w-full
-                                   h-2
-                                   bg-slate-700/50
-                                   rounded-full
-                                   mt-4
-                                   overflow-hidden">
+                            class="bg-slate-900/70 rounded-2xl p-5 border border-white/5">
+
+                            <p class="text-slate-400 text-sm">
+                                Tempo focado hoje
+                            </p>
+
+                            <h4
+                                class="text-3xl font-black mt-2">
+
+                                00h 00min
+
+                            </h4>
+
+                        </div>
+
+
+
+                        <!-- SESSÕES -->
+
+                        <div
+                            class="bg-slate-900/70 rounded-2xl p-5 border border-white/5">
+
+                            <p class="text-slate-400 text-sm">
+                                Sessões concluídas
+                            </p>
+
+                            <h4
+                                class="text-3xl font-black mt-2">
+
+                                0
+
+                            </h4>
+
+                        </div>
+
+
+
+                        <!-- META -->
+
+                        <div
+                            class="bg-gradient-to-br from-blue-500/20 to-cyan-400/10 rounded-2xl p-5 border border-blue-400/20">
+
+
+                            <p class="text-slate-400 text-sm">
+                                Meta diária
+                            </p>
+
+
+                            <h4
+                                class="text-3xl font-black mt-2">
+
+                                2h
+
+                            </h4>
+
 
                             <div
-                                class="h-full
-                                       w-0
-                                       bg-gradient-to-r
-                                       from-blue-500
-                                       to-cyan-400
-                                       rounded-full">
+                                class="w-full h-2 bg-slate-700/50 rounded-full mt-5 overflow-hidden">
+
+                                <div
+                                    class="h-full w-0 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full">
+                                </div>
+
                             </div>
 
                         </div>
 
                     </div>
 
-                </section>
-
-            </div>
-
-
-            <!-- ========================================
-                 FRASE
-            ======================================== -->
-
-            <section
-                class="mt-6
-                       bg-white/5
-                       backdrop-blur-xl
-                       border border-white/10
-                       rounded-3xl
-                       p-6
-                       md:p-8
-                       shadow-2xl
-                       text-center">
-
-                <p
-                    class="text-xl
-                           md:text-2xl
-                           font-semibold
-                           text-slate-200">
-
-                    "Pequenos períodos de foco
-                    geram grandes resultados."
-
-                </p>
-
-                <p class="text-slate-500 mt-3 text-sm">
-                    Continue avançando 🚀
-                </p>
+                </div>
 
             </section>
 
 
-            <!-- ========================================
-                 HISTÓRICO
-            ======================================== -->
 
-            <div class="mt-6 flex justify-center">
+            <!-- ========================================
+                 SAIBA MAIS SOBRE O POMODORO
+            ========================================= -->
+
+            <section
+                class="mt-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden">
+
+
+                <!-- CABEÇALHO RETRÁTIL -->
 
                 <button
+                    id="btnSaibaMaisPomodoro"
                     type="button"
-                    class="bg-white/5
-                           hover:bg-white/10
-                           border border-white/10
-                           px-6
-                           py-3
-                           rounded-xl
-                           transition
-                           font-semibold">
+                    class="w-full flex items-center justify-between gap-4 p-6 md:p-8 text-left hover:bg-white/5 transition">
 
-                    Ver histórico
+
+                    <div>
+
+                        <h2
+                            class="text-xl md:text-2xl font-black">
+
+                            Saiba mais sobre o Pomodoro
+
+                        </h2>
+
+
+                        <p
+                            class="text-slate-400 text-sm md:text-base mt-2">
+
+                            Entenda como funciona essa técnica de estudo.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- ÍCONE -->
+
+                    <span
+                        id="iconePomodoro"
+                        class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-cyan-300 text-2xl transition-transform duration-300">
+
+                        
+
+                    </span>
 
                 </button>
+
+
+
+                <!-- CONTEÚDO RETRÁTIL -->
+
+                <div
+                    id="conteudoPomodoro"
+                    class="hidden px-6 pb-6 md:px-8 md:pb-8">
+
+
+                    <div
+                        class="border-t border-white/10 pt-6">
+
+
+                        <!-- EXPLICAÇÃO -->
+
+                        <p
+                            class="text-slate-400 leading-relaxed max-w-4xl">
+
+                            A Técnica Pomodoro é um método de organização
+                            do tempo que divide o estudo em períodos de
+                            foco intenso intercalados com pequenas pausas.
+                            O objetivo é ajudar você a manter a concentração,
+                            evitar a procrastinação e estudar de forma mais
+                            organizada.
+
+                        </p>
+
+
+
+                        <!-- ETAPAS -->
+
+                        <div
+                            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+
+
+                            <!-- 01 -->
+
+                            <div
+                                class="bg-white/5 border border-white/10 rounded-2xl p-4">
+
+                                <span
+                                    class="text-blue-400 font-black text-lg">
+
+                                    01
+
+                                </span>
+
+
+                                <h3 class="font-bold mt-2">
+                                    Foco
+                                </h3>
+
+
+                                <p
+                                    class="text-slate-500 text-sm mt-1">
+
+                                    Estude por 25 minutos com foco total.
+
+                                </p>
+
+                            </div>
+
+
+
+                            <!-- 02 -->
+
+                            <div
+                                class="bg-white/5 border border-white/10 rounded-2xl p-4">
+
+                                <span
+                                    class="text-cyan-400 font-black text-lg">
+
+                                    02
+
+                                </span>
+
+
+                                <h3 class="font-bold mt-2">
+                                    Pausa curta
+                                </h3>
+
+
+                                <p
+                                    class="text-slate-500 text-sm mt-1">
+
+                                    Faça uma pausa de aproximadamente 5 minutos.
+
+                                </p>
+
+                            </div>
+
+
+
+                            <!-- 03 -->
+
+                            <div
+                                class="bg-white/5 border border-white/10 rounded-2xl p-4">
+
+                                <span
+                                    class="text-blue-400 font-black text-lg">
+
+                                    03
+
+                                </span>
+
+
+                                <h3 class="font-bold mt-2">
+                                    Repita
+                                </h3>
+
+
+                                <p
+                                    class="text-slate-500 text-sm mt-1">
+
+                                    Continue alternando foco e pausas.
+
+                                </p>
+
+                            </div>
+
+
+
+                            <!-- 04 -->
+
+                            <div
+                                class="bg-white/5 border border-white/10 rounded-2xl p-4">
+
+                                <span
+                                    class="text-cyan-400 font-black text-lg">
+
+                                    04
+
+                                </span>
+
+
+                                <h3 class="font-bold mt-2">
+                                    Pausa longa
+                                </h3>
+
+
+                                <p
+                                    class="text-slate-500 text-sm mt-1">
+
+                                    Após 4 ciclos, faça uma pausa maior.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ========================================
+                 FRASE MOTIVACIONAL
+            ========================================= -->
+
+            <div
+                class="mt-6 bg-gradient-to-br from-blue-500/20 to-cyan-400/10 backdrop-blur-xl border border-white/10 rounded-3xl p-5 md:p-7 shadow-2xl">
+
+
+                <p
+                    class="text-slate-300 text-lg leading-relaxed">
+
+                    “Grandes resultados vêm da consistência diária.”
+
+                </p>
+
+
+                <p
+                    class="text-cyan-300 mt-5 font-semibold">
+
+                    — StudyFlow
+
+                </p>
 
             </div>
 
@@ -849,19 +921,26 @@
     </div>
 
 
+
     <!-- ========================================
          SCRIPTS
-    ======================================== -->
+    ========================================= -->
 
     <script src="../js/pomodoro.js"></script>
+
     <script src="../js/auth.js"></script>
 
 
+
     <!-- ========================================
-         MENU MOBILE
-    ======================================== -->
+         MENU MOBILE + CARD RETRÁTIL
+    ========================================= -->
 
     <script>
+
+        /* ========================================
+           MENU MOBILE
+        ========================================= */
 
         const btnMenuPomodoro =
             document.getElementById("btnMenuPomodoro");
@@ -870,13 +949,84 @@
             document.getElementById("sidebarPomodoro");
 
 
-        if (btnMenuPomodoro && sidebarPomodoro) {
+        if (
+            btnMenuPomodoro &&
+            sidebarPomodoro
+        ) {
 
-            btnMenuPomodoro.addEventListener("click", () => {
+            btnMenuPomodoro.addEventListener(
+                "click",
+                () => {
 
-                sidebarPomodoro.classList.toggle("hidden");
+                    sidebarPomodoro.classList.toggle("hidden");
 
-            });
+                }
+            );
+
+        }
+
+
+
+        /* ========================================
+           CARD RETRÁTIL
+        ========================================= */
+
+        const btnSaibaMaisPomodoro =
+            document.getElementById(
+                "btnSaibaMaisPomodoro"
+            );
+
+        const conteudoPomodoro =
+            document.getElementById(
+                "conteudoPomodoro"
+            );
+
+        const iconePomodoro =
+            document.getElementById(
+                "iconePomodoro"
+            );
+
+
+        if (
+            btnSaibaMaisPomodoro &&
+            conteudoPomodoro &&
+            iconePomodoro
+        ) {
+
+            btnSaibaMaisPomodoro.addEventListener(
+                "click",
+                () => {
+
+                    const fechado =
+                        conteudoPomodoro.classList.contains(
+                            "hidden"
+                        );
+
+
+                    if (fechado) {
+
+                        conteudoPomodoro.classList.remove(
+                            "hidden"
+                        );
+
+                        iconePomodoro.classList.add(
+                            "rotate-45"
+                        );
+
+                    } else {
+
+                        conteudoPomodoro.classList.add(
+                            "hidden"
+                        );
+
+                        iconePomodoro.classList.remove(
+                            "rotate-45"
+                        );
+
+                    }
+
+                }
+            );
 
         }
 
