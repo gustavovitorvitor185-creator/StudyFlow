@@ -1,688 +1,758 @@
-/* ========================================
-   STUDYFLOW - RESPONSIVIDADE
-======================================== */
+/* =========================================================
+   STUDYFLOW
+   RESPONSIVE SYSTEM
+   ========================================================= */
 
 
-/* ========================================
-   SIDEBAR DESKTOP
-======================================== */
+/* =========================================================
+   BASE
+   ========================================================= */
 
-@media (min-width: 1024px) {
-
-    /* ========================================
+   html {
+    overflow-x: hidden;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  
+  /* =========================================================
+     SIDEBAR DESKTOP
+     ========================================================= */
+  
+  @media (min-width: 1024px) {
+  
+  
+    /* =======================================================
        SIDEBAR RETRAÍDA
-    ======================================== */
-
+       ======================================================= */
+  
     .sidebar-desktop {
-        width: 76px !important;
-        min-width: 76px !important;
-        max-width: 76px !important;
-
-        flex-shrink: 0;
-        position: relative;
-
-        overflow: hidden !important;
-
-        box-sizing: border-box;
-
-        transition:
-            width 0.28s ease,
-            min-width 0.28s ease,
-            max-width 0.28s ease;
+  
+      width: 76px;
+      min-width: 76px;
+  
+      padding: 16px 0;
+  
+      transition:
+        width 0.28s ease,
+        min-width 0.28s ease,
+        padding 0.28s ease;
+  
+      overflow: hidden;
+  
+      flex-shrink: 0;
     }
-
-
-    /* ========================================
+  
+  
+    /* =======================================================
        SIDEBAR ABERTA
-    ======================================== */
-
+       ======================================================= */
+  
     .sidebar-desktop:hover {
-        width: 250px !important;
-        min-width: 250px !important;
-        max-width: 250px !important;
+  
+      width: 250px;
+      min-width: 250px;
+  
+      padding: 24px;
     }
-
-
-    /* ========================================
-       LOGO
-    ======================================== */
-
-    /* Área da logo quando retraída */
+  
+  
+    /* =======================================================
+       CONTEÚDO DA SIDEBAR
+       ======================================================= */
+  
+    .sidebar-content {
+  
+      width: 100%;
+  
+      min-width: 0;
+    }
+  
+  
+    /* =======================================================
+       ÁREA DA MARCA
+       ======================================================= */
+  
     .brand-container {
-        width: 40px;
-        height: 64px;
-
-        margin: 0 auto 28px auto;
-
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-
-        position: relative;
-
-        overflow: hidden;
-
-        flex-shrink: 0;
-
-        transition:
-            width 0.28s ease,
-            height 0.28s ease,
-            margin 0.28s ease;
+  
+      width: 100%;
+  
+      height: 60px;
+  
+      display: flex;
+  
+      align-items: center;
+  
+      justify-content: center;
+  
+      margin-bottom: 28px;
+  
+      overflow: hidden;
+  
+      flex-shrink: 0;
     }
-
-
-    /*
+  
+  
+    /* =======================================================
        LOGO RETRAÍDA
-
-       A logo original é horizontal.
-       Aqui mostramos somente
-       o símbolo S.
-    */
-    .brand-logo {
-        width: 220px !important;
-        height: 64px !important;
-
-        max-width: none !important;
-        min-width: 220px !important;
-
-        display: block;
-
-        flex-shrink: 0;
-
-        object-fit: contain;
-        object-position: left center;
-
-        /*
-           Corta completamente o
-           texto StudyFlow.
-        */
-        clip-path: inset(0 82% 0 0);
-
-        transform: translateX(0);
-
-        transition:
-            width 0.28s ease,
-            height 0.28s ease,
-            clip-path 0.28s ease;
+       ======================================================= */
+  
+    .brand-logo-collapsed {
+  
+      display: block;
+  
+      width: 42px;
+      height: 42px;
+  
+      object-fit: contain;
+  
+      flex-shrink: 0;
+  
+      opacity: 1;
+  
+      transition:
+        opacity 0.18s ease,
+        transform 0.18s ease;
     }
-
-
-    /* ========================================
-       LOGO SIDEBAR ABERTA
-    ======================================== */
-
-    .sidebar-desktop:hover .brand-container {
-        width: 210px;
-        height: 72px;
-
-        margin-left: auto;
-        margin-right: auto;
-
-        justify-content: center;
-
-        overflow: visible;
+  
+  
+    /* =======================================================
+       LOGO COMPLETA — ESCONDIDA
+       ======================================================= */
+  
+    .brand-logo-expanded {
+  
+      display: none;
+  
+      width: 190px;
+      height: auto;
+  
+      max-width: 100%;
+  
+      object-fit: contain;
+  
+      flex-shrink: 0;
+  
+      opacity: 0;
+  
+      transition:
+        opacity 0.18s ease,
+        transform 0.18s ease;
     }
-
-
-    .sidebar-desktop:hover .brand-logo {
-        width: 210px !important;
-        height: 72px !important;
-
-        min-width: 210px !important;
-
-        object-fit: contain;
-        object-position: center;
-
-        /*
-           Remove o corte quando
-           a sidebar estiver aberta.
-        */
-        clip-path: inset(0 0 0 0);
-
-        transform: translateX(0);
+  
+  
+    /* =======================================================
+       TROCA DA LOGO AO ABRIR
+       ======================================================= */
+  
+    .sidebar-desktop:hover .brand-logo-collapsed {
+  
+      display: none;
     }
-
-
-    /* ========================================
+  
+  
+    .sidebar-desktop:hover .brand-logo-expanded {
+  
+      display: block;
+  
+      opacity: 1;
+    }
+  
+  
+    /* =======================================================
        NAVEGAÇÃO
-    ======================================== */
-
+       ======================================================= */
+  
     .sidebar-nav {
-        width: 52px;
-
-        margin-left: auto;
-        margin-right: auto;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: center;
-
-        gap: 6px;
-
-        overflow: hidden;
+  
+      width: 100%;
+  
+      display: flex;
+  
+      flex-direction: column;
+  
+      align-items: center;
+  
+      gap: 10px;
     }
-
-
-    /* Navegação quando aberta */
-
-    .sidebar-desktop:hover .sidebar-nav {
-        width: 100%;
-
-        align-items: stretch;
-    }
-
-
-    /* ========================================
+  
+  
+    /* =======================================================
        LINKS RETRAÍDOS
-    ======================================== */
-
+       ======================================================= */
+  
     .sidebar-link {
-        width: 52px !important;
-        min-width: 52px !important;
-        max-width: 52px !important;
-
-        height: 48px !important;
-        min-height: 48px !important;
-        max-height: 48px !important;
-
-        padding: 0 !important;
-
-        margin: 0;
-
-        box-sizing: border-box;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        gap: 13px;
-
-        border-radius: 14px;
-
-        color: #94a3b8;
-
-        text-decoration: none;
-
-        border: 1px solid transparent;
-
-        overflow: hidden;
-
-        flex-shrink: 0;
-
-        transition:
-            width 0.28s ease,
-            min-width 0.28s ease,
-            max-width 0.28s ease,
-            background 0.2s ease,
-            color 0.2s ease,
-            border-color 0.2s ease,
-            box-shadow 0.2s ease;
+  
+      width: 44px;
+      min-width: 44px;
+      max-width: 44px;
+  
+      height: 44px;
+      min-height: 44px;
+  
+      padding: 0;
+  
+      display: flex;
+  
+      align-items: center;
+  
+      justify-content: center;
+  
+      gap: 12px;
+  
+      border-radius: 14px;
+  
+      color: #94a3b8;
+  
+      text-decoration: none;
+  
+      transition:
+        width 0.28s ease,
+        min-width 0.28s ease,
+        max-width 0.28s ease,
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+  
+      flex-shrink: 0;
+  
+      margin: 0 auto;
     }
-
-
-    /* ========================================
-       LINKS SIDEBAR ABERTA
-    ======================================== */
-
-    .sidebar-desktop:hover .sidebar-link {
-        width: 100% !important;
-
-        min-width: 0 !important;
-        max-width: none !important;
-
-        justify-content: flex-start;
-
-        padding: 0 14px !important;
-    }
-
-
-    /* ========================================
+  
+  
+    /* =======================================================
        HOVER DOS LINKS
-    ======================================== */
-
+       ======================================================= */
+  
     .sidebar-link:hover {
-        background: rgba(255,255,255,0.055);
-
-        color: #e2e8f0;
-
-        border-color: rgba(255,255,255,0.07);
+  
+      color: #67e8f9;
+  
+      background: rgba(255, 255, 255, 0.06);
     }
-
-
-    /* ========================================
+  
+  
+    /* =======================================================
        ITEM ATIVO
-    ======================================== */
-
+       ======================================================= */
+  
     .sidebar-link-active {
-        background: linear-gradient(
-            135deg,
-            #3b82f6,
-            #22d3ee
+  
+      color: #e0f2fe;
+  
+      background:
+        linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.95),
+          rgba(34, 211, 238, 0.95)
         );
-
-        color: white;
-
-        border-color: transparent;
-
-        box-shadow:
-            0 8px 24px rgba(59,130,246,0.20);
+  
+      box-shadow:
+        0 10px 30px rgba(14, 165, 233, 0.18);
     }
-
-
+  
+  
     .sidebar-link-active:hover {
-        background: linear-gradient(
-            135deg,
-            #3b82f6,
-            #22d3ee
+  
+      color: #e0f2fe;
+  
+      background:
+        linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 1),
+          rgba(34, 211, 238, 1)
         );
-
-        color: white;
     }
-
-
-    /* ========================================
+  
+  
+    /* =======================================================
        ÍCONES
-    ======================================== */
-
+       ======================================================= */
+  
     .sidebar-icon {
-        width: 21px !important;
-        height: 21px !important;
-
-        min-width: 21px !important;
-        max-width: 21px !important;
-
-        min-height: 21px !important;
-        max-height: 21px !important;
-
-        display: block;
-
-        flex-shrink: 0;
-
-        margin: 0;
+  
+      width: 22px;
+      height: 22px;
+  
+      display: block;
+  
+      flex-shrink: 0;
+  
+      margin: 0;
+  
+      transition:
+        transform 0.2s ease;
     }
-
-
-    /* ========================================
-       TEXTO DA SIDEBAR
-    ======================================== */
-
+  
+  
+    .sidebar-link:hover .sidebar-icon {
+  
+      transform: scale(1.04);
+    }
+  
+  
+    /* =======================================================
+       TEXTOS
+       ======================================================= */
+  
     .sidebar-text {
-        display: none;
-
-        white-space: nowrap;
-
-        opacity: 0;
-
-        transition: opacity 0.2s ease;
+  
+      display: none;
+  
+      white-space: nowrap;
+  
+      font-size: 15px;
+  
+      font-weight: 600;
+  
+      opacity: 0;
+  
+      transform: translateX(-5px);
+  
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
     }
-
-
+  
+  
+    /* =======================================================
+       LINKS QUANDO ABERTA
+       ======================================================= */
+  
+    .sidebar-desktop:hover .sidebar-link {
+  
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+  
+      justify-content: flex-start;
+  
+      padding: 0 14px;
+  
+      margin: 0;
+    }
+  
+  
+    /* =======================================================
+       TEXTO QUANDO ABERTA
+       ======================================================= */
+  
     .sidebar-desktop:hover .sidebar-text {
-        display: block;
-
-        opacity: 1;
+  
+      display: block;
+  
+      opacity: 1;
+  
+      transform: translateX(0);
     }
-
-
-    /* ========================================
-       BOTÃO SAIR
-    ======================================== */
-
+  
+  
+    /* =======================================================
+       SAIR
+       ======================================================= */
+  
     .sidebar-link-logout {
-        margin-top: 12px;
-
-        color: #fda4af;
+  
+      margin-top: 12px;
     }
-
-
+  
+  
     .sidebar-link-logout:hover {
-        color: #fecdd3;
-
-        background: rgba(244,63,94,0.08);
-
-        border-color: rgba(244,63,94,0.12);
+  
+      color: #fda4af;
+  
+      background: rgba(244, 63, 94, 0.08);
     }
-
-
-    /* ========================================
-       TOOLTIP
-    ======================================== */
-
-    .sidebar-link[title]::after {
-        content: attr(title);
-
-        position: fixed;
-
-        left: 88px;
-
-        transform: translateY(-50%);
-
-        background: #0f172a;
-
-        color: #e2e8f0;
-
-        border: 1px solid rgba(255,255,255,0.10);
-
-        padding: 7px 10px;
-
-        border-radius: 8px;
-
-        font-size: 0.78rem;
-
-        font-weight: 500;
-
-        white-space: nowrap;
-
-        opacity: 0;
-
-        pointer-events: none;
-
-        z-index: 999;
-
-        box-shadow:
-            0 10px 30px rgba(0,0,0,0.35);
-
-        transition: opacity 0.15s ease;
-    }
-
-
-    .sidebar-desktop:not(:hover)
-    .sidebar-link[title]:hover::after {
-        opacity: 1;
-    }
-
-
-    /* ========================================
+  
+  
+    /* =======================================================
        PROGRESSO
-    ======================================== */
-
+       ======================================================= */
+  
     .sidebar-progress {
-        width: 52px !important;
-
-        min-width: 52px !important;
-        max-width: 52px !important;
-
-        box-sizing: border-box;
-
-        overflow: hidden;
-
-        background:
-            linear-gradient(
-                135deg,
-                rgba(59,130,246,0.13),
-                rgba(34,211,238,0.06)
-            );
-
-        border:
-            1px solid rgba(255,255,255,0.08);
-
-        border-radius: 18px;
-
-        padding: 15px;
-
-        opacity: 0;
-
-        pointer-events: none;
-
-        transition:
-            opacity 0.2s ease,
-            width 0.28s ease;
+  
+      width: 100%;
+  
+      opacity: 0;
+  
+      pointer-events: none;
+  
+      transform: translateY(6px);
+  
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
     }
-
-
+  
+  
     .sidebar-desktop:hover .sidebar-progress {
-        width: 100% !important;
-
-        min-width: 0 !important;
-        max-width: none !important;
-
-        opacity: 1;
-
-        pointer-events: auto;
+  
+      opacity: 1;
+  
+      pointer-events: auto;
+  
+      transform: translateY(0);
     }
-}
-
-
-/* ========================================
-   TABLETS
-======================================== */
-
-@media (max-width: 1023px) {
-
+  
+  }
+  
+  
+  /* =========================================================
+     TABLETS
+     ========================================================= */
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+  
     main {
-        min-width: 0;
+  
+      width: 100%;
     }
-
-    section {
-        min-width: 0;
-    }
-
-
-    /* ========================================
-       SIDEBAR MOBILE / TABLET
-    ======================================== */
-
-    #sidebar:not(.hidden),
-    #sidebarTarefas:not(.hidden),
-    #sidebarMaterias:not(.hidden),
-    #sidebarCalendario:not(.hidden),
-    #sidebarPomodoro:not(.hidden) {
-
-        position: fixed;
-
-        top: 0;
-        left: 0;
-
-        width: min(300px, 85vw);
-
-        height: 100vh;
-
-        z-index: 50;
-
-        overflow-y: auto;
-
-        border-right:
-            1px solid rgba(255,255,255,0.10);
-
-        border-bottom: none;
-
-        box-shadow:
-            20px 0 50px rgba(0,0,0,0.35);
-    }
-}
-
-
-/* ========================================
-   CELULARES
-======================================== */
-
-@media (max-width: 768px) {
-
-    html,
+  
+  }
+  
+  
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+  
+  @media (max-width: 1023px) {
+  
+  
+    /* =======================================================
+       BODY
+       ======================================================= */
+  
     body {
-        width: 100%;
-        max-width: 100%;
-
-        overflow-x: hidden;
+  
+      min-width: 0;
     }
-
-
+  
+  
+    /* =======================================================
+       SIDEBAR MOBILE
+       ======================================================= */
+  
+    #sidebar,
+    #sidebarTarefas,
+    #sidebarMaterias,
+    #sidebarCalendario,
+    #sidebarPomodoro {
+  
+      position: fixed;
+  
+      top: 0;
+      left: 0;
+  
+      width: 280px;
+      height: 100vh;
+  
+      z-index: 100;
+  
+      padding: 24px;
+  
+      transform: translateX(-100%);
+  
+      transition:
+        transform 0.28s ease;
+  
+      overflow-y: auto;
+  
+      overflow-x: hidden;
+    }
+  
+  
+    /* =======================================================
+       SIDEBAR MOBILE ABERTA
+       ======================================================= */
+  
+    #sidebar.mobile-open,
+    #sidebarTarefas.mobile-open,
+    #sidebarMaterias.mobile-open,
+    #sidebarCalendario.mobile-open,
+    #sidebarPomodoro.mobile-open {
+  
+      transform: translateX(0);
+    }
+  
+  
+    /* =======================================================
+       MARCA MOBILE
+       ======================================================= */
+  
+    .brand-container {
+  
+      width: 100%;
+  
+      display: flex;
+  
+      align-items: center;
+  
+      justify-content: flex-start;
+  
+      overflow: hidden;
+    }
+  
+  
+    .brand-logo-collapsed {
+  
+      display: none;
+    }
+  
+  
+    .brand-logo-expanded {
+  
+      display: block;
+  
+      width: 190px;
+      max-width: 100%;
+  
+      height: auto;
+  
+      object-fit: contain;
+    }
+  
+  
+    /* =======================================================
+       NAVEGAÇÃO MOBILE
+       ======================================================= */
+  
+    .sidebar-nav {
+  
+      width: 100%;
+  
+      display: flex;
+  
+      flex-direction: column;
+  
+      gap: 8px;
+    }
+  
+  
+    .sidebar-link {
+  
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+  
+      height: 48px;
+  
+      display: flex;
+  
+      align-items: center;
+  
+      justify-content: flex-start;
+  
+      gap: 14px;
+  
+      padding: 0 14px;
+  
+      border-radius: 14px;
+    }
+  
+  
+    .sidebar-icon {
+  
+      width: 22px;
+      height: 22px;
+  
+      flex-shrink: 0;
+    }
+  
+  
+    .sidebar-text {
+  
+      display: block;
+  
+      opacity: 1;
+  
+      transform: none;
+  
+      white-space: nowrap;
+    }
+  
+  
+    /* =======================================================
+       PROGRESSO MOBILE
+       ======================================================= */
+  
+    .sidebar-progress {
+  
+      width: 100%;
+  
+      opacity: 1;
+  
+      pointer-events: auto;
+  
+      transform: none;
+    }
+  
+  
+    /* =======================================================
+       CONTEÚDO
+       ======================================================= */
+  
     main {
-        width: 100%;
-
-        min-width: 0;
+  
+      width: 100%;
+  
+      min-width: 0;
     }
-
-
+  
+  
+    /* =======================================================
+       CARD
+       ======================================================= */
+  
+    .card {
+  
+      min-width: 0;
+    }
+  
+  
+    /* =======================================================
+       TEXTOS
+       ======================================================= */
+  
     h1,
     h2,
-    h3 {
-        word-break: break-word;
+    h3,
+    h4,
+    p {
+  
+      overflow-wrap: anywhere;
     }
-
-
+  
+  
+    /* =======================================================
+       LOGO DO HEADER MOBILE
+       ======================================================= */
+  
+    .mobile-brand-logo {
+  
+      width: 170px;
+  
+      max-width: 70vw;
+  
+      height: auto;
+  
+      object-fit: contain;
+  
+      display: block;
+    }
+  
+  }
+  
+  
+  /* =========================================================
+     MOBILE PEQUENO
+     ========================================================= */
+  
+  @media (max-width: 640px) {
+  
+  
+    /* =======================================================
+       CONTEÚDO
+       ======================================================= */
+  
+    main {
+  
+      padding-left: 16px !important;
+  
+      padding-right: 16px !important;
+    }
+  
+  
+    /* =======================================================
+       HEADER
+       ======================================================= */
+  
+    main > .lg\:hidden {
+  
+      margin-bottom: 24px;
+    }
+  
+  
+    /* =======================================================
+       LOGO MOBILE
+       ======================================================= */
+  
+    .mobile-brand-logo {
+  
+      width: 150px;
+  
+      max-width: 65vw;
+    }
+  
+  
+    /* =======================================================
+       TÍTULO
+       ======================================================= */
+  
+    main h1 {
+  
+      font-size: 2rem;
+  
+      line-height: 1.1;
+    }
+  
+  
+    main h2 {
+  
+      font-size: 1.7rem;
+    }
+  
+  
+    /* =======================================================
+       CARDS
+       ======================================================= */
+  
     .card {
-        width: 100%;
-
-        min-width: 0;
+  
+      padding: 20px;
     }
-
-
-    img {
-        max-width: 100%;
-
-        height: auto;
+  
+  
+    /* =======================================================
+       NÚMEROS
+       ======================================================= */
+  
+    .card h3 {
+  
+      font-size: 2.8rem;
     }
-
-
-    button,
-    a {
-        max-width: 100%;
+  
+  
+    /* =======================================================
+       SEÇÕES
+       ======================================================= */
+  
+    main section {
+  
+      min-width: 0;
     }
-
-
-    section.grid {
-        width: 100%;
-
-        gap: 1rem;
-
-        margin-bottom: 1.5rem;
+  
+  }
+  
+  
+  /* =========================================================
+     ACESSIBILIDADE
+     ========================================================= */
+  
+  @media (prefers-reduced-motion: reduce) {
+  
+    *,
+    *::before,
+    *::after {
+  
+      scroll-behavior: auto !important;
+  
+      transition-duration: 0.01ms !important;
+  
+      animation-duration: 0.01ms !important;
+  
+      animation-iteration-count: 1 !important;
     }
-
-
-    section.grid > div {
-        width: 100%;
-
-        min-width: 0;
-    }
-
-
-    section.grid h3 {
-        font-size: 1.75rem;
-
-        line-height: 1.2;
-    }
-
-
-    section.grid p {
-        max-width: 100%;
-
-        overflow-wrap: break-word;
-    }
-
-
-    section.grid .card {
-        width: 100%;
-
-        padding: 18px;
-
-        margin-top: 1rem;
-    }
-
-
-    section.grid .space-y-5 > div {
-        width: 100%;
-
-        min-width: 0;
-    }
-
-
-    section.grid h4 {
-        overflow-wrap: break-word;
-    }
-
-
-    section.grid span {
-        max-width: 100%;
-    }
-
-
-    #perfilNome,
-    #perfilEmail {
-        overflow-wrap: anywhere;
-    }
-}
-
-
-/* ========================================
-   CELULARES PEQUENOS
-======================================== */
-
-@media (max-width: 480px) {
-
-    h1 {
-        font-size: 1.75rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    h3 {
-        font-size: 1.25rem;
-    }
-
-
-    .card {
-        padding: 18px;
-
-        border-radius: 20px;
-    }
-
-
-    section.grid {
-        gap: 1rem;
-    }
-
-
-    section.grid > div {
-        padding: 20px;
-
-        border-radius: 22px;
-    }
-
-
-    section.grid h3 {
-        font-size: 1.5rem;
-    }
-
-
-    section.grid .card h4 {
-        font-size: 1rem;
-    }
-
-
-    #btnEditarPerfil {
-        width: 100%;
-    }
-
-
-    button {
-        max-width: 100%;
-    }
-
-
-    #sidebar:not(.hidden),
-    #sidebarTarefas:not(.hidden),
-    #sidebarMaterias:not(.hidden),
-    #sidebarCalendario:not(.hidden),
-    #sidebarPomodoro:not(.hidden) {
-
-        width: min(280px, 88vw);
-    }
-}
-
-
-/* ========================================
-   SCROLLBAR MOBILE
-======================================== */
-
-@media (max-width: 768px) {
-
-    ::-webkit-scrollbar {
-        width: 6px;
-    }
-}
+  
+  }
