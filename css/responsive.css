@@ -10,10 +10,18 @@
 
    html {
     overflow-x: hidden;
+    box-sizing: border-box;
   }
   
   body {
     overflow-x: hidden;
+    min-width: 0;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
   
   
@@ -23,26 +31,33 @@
   
   @media (min-width: 1024px) {
   
-  
     /* =======================================================
-       SIDEBAR RETRAÍDA
+       SIDEBAR FECHADA
        ======================================================= */
   
     .sidebar-desktop {
+      box-sizing: border-box !important;
   
-      width: 76px;
-      min-width: 76px;
+      width: 76px !important;
+      min-width: 76px !important;
+      max-width: 76px !important;
   
-      padding: 16px 0;
+      height: 100vh;
+      min-height: 100vh;
   
-      transition:
-        width 0.28s ease,
-        min-width 0.28s ease,
-        padding 0.28s ease;
+      padding: 16px 0 !important;
+  
+      margin: 0 !important;
   
       overflow: hidden;
   
       flex-shrink: 0;
+  
+      transition:
+        width 0.28s ease,
+        min-width 0.28s ease,
+        max-width 0.28s ease,
+        padding 0.28s ease;
     }
   
   
@@ -51,43 +66,44 @@
        ======================================================= */
   
     .sidebar-desktop:hover {
+      box-sizing: border-box !important;
   
-      width: 250px;
-      min-width: 250px;
+      width: 250px !important;
+      min-width: 250px !important;
+      max-width: 250px !important;
   
-      padding: 24px;
+      padding: 24px !important;
     }
   
   
     /* =======================================================
-       CONTEÚDO DA SIDEBAR
+       CONTEÚDO INTERNO
        ======================================================= */
   
-    .sidebar-content {
-  
+    .sidebar-desktop .sidebar-content {
       width: 100%;
-  
       min-width: 0;
-    }
-  
-  
-    /* =======================================================
-       ÁREA DA MARCA
-       ======================================================= */
-  
-    .brand-container {
-  
-      width: 100%;
-  
-      height: 60px;
   
       display: flex;
+      flex-direction: column;
+    }
   
+  
+    /* =======================================================
+       MARCA
+       ======================================================= */
+  
+    .sidebar-desktop .brand-container {
+      width: 100%;
+      height: 64px;
+  
+      display: flex;
       align-items: center;
-  
       justify-content: center;
   
-      margin-bottom: 28px;
+      margin: 0 0 28px 0;
+  
+      padding: 0 !important;
   
       overflow: hidden;
   
@@ -96,66 +112,66 @@
   
   
     /* =======================================================
-       LOGO RETRAÍDA
+       LOGO FECHADA
        ======================================================= */
   
-    .brand-logo-collapsed {
+    .sidebar-desktop .brand-logo-collapsed,
+    .sidebar-desktop .brand-logo {
+      display: block !important;
   
-      display: block;
+      width: 48px !important;
+      height: 48px !important;
   
-      width: 42px;
-      height: 42px;
+      min-width: 48px !important;
+      max-width: 48px !important;
   
       object-fit: contain;
+      object-position: center;
+  
+      margin: 0 auto !important;
+      padding: 0 !important;
   
       flex-shrink: 0;
   
       opacity: 1;
   
-      transition:
-        opacity 0.18s ease,
-        transform 0.18s ease;
+      transform: none;
     }
   
   
     /* =======================================================
-       LOGO COMPLETA — ESCONDIDA
+       LOGO ABERTA
        ======================================================= */
   
-    .brand-logo-expanded {
+    .sidebar-desktop .brand-logo-expanded {
+      display: none !important;
   
-      display: none;
+      width: 190px !important;
+      height: auto !important;
   
-      width: 190px;
-      height: auto;
-  
-      max-width: 100%;
+      max-width: 100% !important;
   
       object-fit: contain;
   
-      flex-shrink: 0;
+      margin: 0 auto !important;
+      padding: 0 !important;
   
       opacity: 0;
-  
-      transition:
-        opacity 0.18s ease,
-        transform 0.18s ease;
     }
   
   
     /* =======================================================
-       TROCA DA LOGO AO ABRIR
+       TROCA DA LOGO
        ======================================================= */
   
-    .sidebar-desktop:hover .brand-logo-collapsed {
-  
-      display: none;
+    .sidebar-desktop:hover .brand-logo-collapsed,
+    .sidebar-desktop:hover .brand-logo {
+      display: none !important;
     }
   
   
     .sidebar-desktop:hover .brand-logo-expanded {
-  
-      display: block;
+      display: block !important;
   
       opacity: 1;
     }
@@ -165,8 +181,7 @@
        NAVEGAÇÃO
        ======================================================= */
   
-    .sidebar-nav {
-  
+    .sidebar-desktop .sidebar-nav {
       width: 100%;
   
       display: flex;
@@ -176,23 +191,28 @@
       align-items: center;
   
       gap: 10px;
+  
+      margin: 0;
+      padding: 0;
     }
   
   
     /* =======================================================
-       LINKS RETRAÍDOS
+       LINKS FECHADOS
        ======================================================= */
   
-    .sidebar-link {
+    .sidebar-desktop .sidebar-link {
+      box-sizing: border-box !important;
   
-      width: 44px;
-      min-width: 44px;
-      max-width: 44px;
+      width: 44px !important;
+      min-width: 44px !important;
+      max-width: 44px !important;
   
-      height: 44px;
-      min-height: 44px;
+      height: 44px !important;
+      min-height: 44px !important;
   
-      padding: 0;
+      padding: 0 !important;
+      margin: 0 auto !important;
   
       display: flex;
   
@@ -206,6 +226,8 @@
   
       color: #94a3b8;
   
+      flex-shrink: 0;
+  
       text-decoration: none;
   
       transition:
@@ -215,10 +237,6 @@
         background-color 0.2s ease,
         color 0.2s ease,
         transform 0.2s ease;
-  
-      flex-shrink: 0;
-  
-      margin: 0 auto;
     }
   
   
@@ -226,8 +244,7 @@
        HOVER DOS LINKS
        ======================================================= */
   
-    .sidebar-link:hover {
-  
+    .sidebar-desktop .sidebar-link:hover {
       color: #67e8f9;
   
       background: rgba(255, 255, 255, 0.06);
@@ -235,11 +252,10 @@
   
   
     /* =======================================================
-       ITEM ATIVO
+       LINK ATIVO
        ======================================================= */
   
-    .sidebar-link-active {
-  
+    .sidebar-desktop .sidebar-link-active {
       color: #e0f2fe;
   
       background:
@@ -254,8 +270,7 @@
     }
   
   
-    .sidebar-link-active:hover {
-  
+    .sidebar-desktop .sidebar-link-active:hover {
       color: #e0f2fe;
   
       background:
@@ -271,35 +286,35 @@
        ÍCONES
        ======================================================= */
   
-    .sidebar-icon {
+    .sidebar-desktop .sidebar-icon {
+      width: 22px !important;
+      height: 22px !important;
   
-      width: 22px;
-      height: 22px;
+      min-width: 22px !important;
   
       display: block;
   
       flex-shrink: 0;
   
-      margin: 0;
+      margin: 0 !important;
+      padding: 0 !important;
   
       transition:
         transform 0.2s ease;
     }
   
   
-    .sidebar-link:hover .sidebar-icon {
-  
+    .sidebar-desktop .sidebar-link:hover .sidebar-icon {
       transform: scale(1.04);
     }
   
   
     /* =======================================================
-       TEXTOS
+       TEXTOS FECHADOS
        ======================================================= */
   
-    .sidebar-text {
-  
-      display: none;
+    .sidebar-desktop .sidebar-text {
+      display: none !important;
   
       white-space: nowrap;
   
@@ -310,38 +325,36 @@
       opacity: 0;
   
       transform: translateX(-5px);
-  
-      transition:
-        opacity 0.2s ease,
-        transform 0.2s ease;
     }
   
   
     /* =======================================================
-       LINKS QUANDO ABERTA
+       LINKS ABERTOS
        ======================================================= */
   
     .sidebar-desktop:hover .sidebar-link {
+      box-sizing: border-box !important;
   
-      width: 100%;
-      min-width: 100%;
-      max-width: 100%;
+      width: 100% !important;
+      min-width: 100% !important;
+      max-width: 100% !important;
+  
+      height: 44px !important;
+  
+      padding: 0 14px !important;
+  
+      margin: 0 !important;
   
       justify-content: flex-start;
-  
-      padding: 0 14px;
-  
-      margin: 0;
     }
   
   
     /* =======================================================
-       TEXTO QUANDO ABERTA
+       TEXTOS ABERTOS
        ======================================================= */
   
     .sidebar-desktop:hover .sidebar-text {
-  
-      display: block;
+      display: block !important;
   
       opacity: 1;
   
@@ -350,17 +363,15 @@
   
   
     /* =======================================================
-       SAIR
+       LOGOUT
        ======================================================= */
   
-    .sidebar-link-logout {
-  
-      margin-top: 12px;
+    .sidebar-desktop .sidebar-link-logout {
+      margin-top: 12px !important;
     }
   
   
-    .sidebar-link-logout:hover {
-  
+    .sidebar-desktop .sidebar-link-logout:hover {
       color: #fda4af;
   
       background: rgba(244, 63, 94, 0.08);
@@ -371,8 +382,7 @@
        PROGRESSO
        ======================================================= */
   
-    .sidebar-progress {
-  
+    .sidebar-desktop .sidebar-progress {
       width: 100%;
   
       opacity: 0;
@@ -388,7 +398,6 @@
   
   
     .sidebar-desktop:hover .sidebar-progress {
-  
       opacity: 1;
   
       pointer-events: auto;
@@ -406,8 +415,8 @@
   @media (min-width: 768px) and (max-width: 1023px) {
   
     main {
-  
       width: 100%;
+      min-width: 0;
     }
   
   }
@@ -419,13 +428,11 @@
   
   @media (max-width: 1023px) {
   
-  
     /* =======================================================
        BODY
        ======================================================= */
   
     body {
-  
       min-width: 0;
     }
   
@@ -439,18 +446,20 @@
     #sidebarMaterias,
     #sidebarCalendario,
     #sidebarPomodoro {
-  
       position: fixed;
   
       top: 0;
       left: 0;
   
-      width: 280px;
+      width: 280px !important;
+      min-width: 280px !important;
+      max-width: 280px !important;
+  
       height: 100vh;
   
       z-index: 100;
   
-      padding: 24px;
+      padding: 24px !important;
   
       transform: translateX(-100%);
   
@@ -458,8 +467,9 @@
         transform 0.28s ease;
   
       overflow-y: auto;
-  
       overflow-x: hidden;
+  
+      box-sizing: border-box !important;
     }
   
   
@@ -472,7 +482,6 @@
     #sidebarMaterias.mobile-open,
     #sidebarCalendario.mobile-open,
     #sidebarPomodoro.mobile-open {
-  
       transform: translateX(0);
     }
   
@@ -482,7 +491,6 @@
        ======================================================= */
   
     .brand-container {
-  
       width: 100%;
   
       display: flex;
@@ -496,19 +504,18 @@
   
   
     .brand-logo-collapsed {
-  
-      display: none;
+      display: none !important;
     }
   
   
     .brand-logo-expanded {
+      display: block !important;
   
-      display: block;
+      width: 190px !important;
   
-      width: 190px;
-      max-width: 100%;
+      max-width: 100% !important;
   
-      height: auto;
+      height: auto !important;
   
       object-fit: contain;
     }
@@ -519,7 +526,6 @@
        ======================================================= */
   
     .sidebar-nav {
-  
       width: 100%;
   
       display: flex;
@@ -531,10 +537,13 @@
   
   
     .sidebar-link {
+      box-sizing: border-box;
   
-      width: 100%;
-      min-width: 100%;
-      max-width: 100%;
+      width: 100% !important;
+  
+      min-width: 100% !important;
+  
+      max-width: 100% !important;
   
       height: 48px;
   
@@ -546,15 +555,15 @@
   
       gap: 14px;
   
-      padding: 0 14px;
+      padding: 0 14px !important;
   
       border-radius: 14px;
     }
   
   
     .sidebar-icon {
-  
       width: 22px;
+  
       height: 22px;
   
       flex-shrink: 0;
@@ -562,8 +571,7 @@
   
   
     .sidebar-text {
-  
-      display: block;
+      display: block !important;
   
       opacity: 1;
   
@@ -578,7 +586,6 @@
        ======================================================= */
   
     .sidebar-progress {
-  
       width: 100%;
   
       opacity: 1;
@@ -594,7 +601,6 @@
        ======================================================= */
   
     main {
-  
       width: 100%;
   
       min-width: 0;
@@ -602,11 +608,10 @@
   
   
     /* =======================================================
-       CARD
+       CARDS
        ======================================================= */
   
     .card {
-  
       min-width: 0;
     }
   
@@ -620,17 +625,15 @@
     h3,
     h4,
     p {
-  
       overflow-wrap: anywhere;
     }
   
   
     /* =======================================================
-       LOGO DO HEADER MOBILE
+       LOGO HEADER MOBILE
        ======================================================= */
   
     .mobile-brand-logo {
-  
       width: 170px;
   
       max-width: 70vw;
@@ -651,47 +654,25 @@
   
   @media (max-width: 640px) {
   
-  
-    /* =======================================================
-       CONTEÚDO
-       ======================================================= */
-  
     main {
-  
       padding-left: 16px !important;
-  
       padding-right: 16px !important;
     }
   
   
-    /* =======================================================
-       HEADER
-       ======================================================= */
-  
     main > .lg\:hidden {
-  
       margin-bottom: 24px;
     }
   
   
-    /* =======================================================
-       LOGO MOBILE
-       ======================================================= */
-  
     .mobile-brand-logo {
-  
       width: 150px;
   
       max-width: 65vw;
     }
   
   
-    /* =======================================================
-       TÍTULO
-       ======================================================= */
-  
     main h1 {
-  
       font-size: 2rem;
   
       line-height: 1.1;
@@ -699,37 +680,21 @@
   
   
     main h2 {
-  
       font-size: 1.7rem;
     }
   
   
-    /* =======================================================
-       CARDS
-       ======================================================= */
-  
     .card {
-  
       padding: 20px;
     }
   
   
-    /* =======================================================
-       NÚMEROS
-       ======================================================= */
-  
     .card h3 {
-  
       font-size: 2.8rem;
     }
   
   
-    /* =======================================================
-       SEÇÕES
-       ======================================================= */
-  
     main section {
-  
       min-width: 0;
     }
   
@@ -745,7 +710,6 @@
     *,
     *::before,
     *::after {
-  
       scroll-behavior: auto !important;
   
       transition-duration: 0.01ms !important;
