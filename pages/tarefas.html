@@ -103,7 +103,6 @@
              bg-slate-950/90
              backdrop-blur-xl
              border-r border-white/10
-             p-6
              flex-col
              justify-between
              min-h-screen">
@@ -122,15 +121,23 @@
 
         <div class="brand-container">
 
-          <img
-            src="../assets/StudyFlow.png"
-            alt="StudyFlow"
-            class="brand-logo-collapsed">
+          <!-- LOGO SOMENTE O S
+               APARECE QUANDO RETRAÍDA -->
 
-          <img
-            src="../assets/StutyFlow.2.png"
-            alt="StudyFlow"
-            class="brand-logo-expanded">
+               <img
+               src="../assets/StudyFlow.png"
+               alt="StudyFlow"
+               class="brand-logo-collapsed">
+   
+   
+             <!-- LOGO COMPLETA
+                  APARECE QUANDO SIDEBAR ESTÁ ABERTA -->
+   
+             <img
+               src="../assets/StutyFlow.2.png"
+               alt="StudyFlow"
+               class="brand-logo-expanded">
+   
 
         </div>
 
@@ -205,39 +212,6 @@
 
             <span class="sidebar-text">
               Tarefas
-            </span>
-
-          </a>
-
-
-          <!-- MATÉRIAS -->
-
-          <a
-            href="materias.html"
-            class="sidebar-link"
-            title="Matérias">
-
-            <svg
-              class="sidebar-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round">
-
-              <path
-                d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z">
-              </path>
-
-              <path
-                d="M4 5.5A2.5 2.5 0 0 0 6.5 8H20">
-              </path>
-
-            </svg>
-
-            <span class="sidebar-text">
-              Matérias
             </span>
 
           </a>
@@ -321,6 +295,41 @@
           </a>
 
 
+          <!-- MEU PERFIL -->
+
+          <a
+            href="materias.html"
+            class="sidebar-link"
+            title="Meu Perfil">
+
+            <svg
+              class="sidebar-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+
+              <circle
+                cx="12"
+                cy="8"
+                r="3.5">
+              </circle>
+
+              <path
+                d="M5 20c.8-3.3 3.3-5 7-5s6.2 1.7 7 5">
+              </path>
+
+            </svg>
+
+            <span class="sidebar-text">
+              Meu Perfil
+            </span>
+
+          </a>
+
+
           <!-- SAIR -->
 
           <a
@@ -363,7 +372,6 @@
       ======================================== -->
 
       <div class="sidebar-progress">
-
 
         <div class="flex justify-between items-center mb-3">
 
@@ -641,7 +649,7 @@
 
       btnMenuTarefas.addEventListener("click", () => {
 
-        sidebarTarefas.classList.toggle("hidden");
+        sidebarTarefas.classList.toggle("mobile-open");
 
       });
 

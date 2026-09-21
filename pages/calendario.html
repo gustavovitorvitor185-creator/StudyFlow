@@ -49,21 +49,9 @@
             <div class="flex items-center gap-3">
 
                 <img
-                    src="../assets/StudyFlow.png"
-                    alt=""
-                    class="w-10 h-10 object-contain">
-
-                <span
-                    class="text-xl font-black
-                           bg-gradient-to-r
-                           from-blue-400
-                           to-cyan-300
-                           bg-clip-text
-                           text-transparent">
-
-                    StudyFlow
-
-                </span>
+                    src="../assets/StudyFlow.2.png"
+                    alt="StudyFlow"
+                    class="mobile-brand-logo">
 
             </div>
 
@@ -111,39 +99,47 @@
                    bg-slate-950/90
                    backdrop-blur-xl
                    border-r border-white/10
-                   p-6
                    flex-col
                    justify-between
                    min-h-screen">
 
 
-            <!-- PARTE SUPERIOR -->
+            <!-- ====================================
+                 PARTE SUPERIOR
+            ==================================== -->
 
             <div class="sidebar-content">
 
 
-                <!-- LOGO -->
+                <!-- ====================================
+                     LOGO
+                ==================================== -->
 
                 <div class="brand-container">
 
-                    <img
-                        src="../assets/StudyFlow.png"
-                        alt=""
-                        class="brand-logo">
-                        
-                    <img
-                        src="../assets/StutyFlow.2.png"
-                        alt="StudyFlow"
-                        class="brand-logo-expanded">
-            
-                    </div>
-            
+                    <!-- LOGO SOMENTE O S
+               APARECE QUANDO RETRAÍDA -->
+
+               <img
+               src="../assets/StudyFlow.png"
+               alt="StudyFlow"
+               class="brand-logo-collapsed">
+   
+   
+             <!-- LOGO COMPLETA
+                  APARECE QUANDO SIDEBAR ESTÁ ABERTA -->
+   
+             <img
+               src="../assets/StutyFlow.2.png"
+               alt="StudyFlow"
+               class="brand-logo-expanded">
+               
+                </div>
 
 
-
-                <!-- ========================================
+                <!-- ====================================
                      NAVEGAÇÃO
-                ======================================== -->
+                ==================================== -->
 
                 <nav class="sidebar-nav">
 
@@ -165,9 +161,7 @@
                             stroke-linejoin="round">
 
                             <path d="M3 11.5L12 4l9 7.5"></path>
-
                             <path d="M5.5 10v9h13v-9"></path>
-
                             <path d="M9.5 19v-5h5v5"></path>
 
                         </svg>
@@ -204,11 +198,9 @@
                             </rect>
 
                             <path d="M8 8h.01"></path>
-
                             <path d="M11 8h5"></path>
 
                             <path d="M8 13l1.5 1.5L12 12"></path>
-
                             <path d="M14 13h2"></path>
 
                         </svg>
@@ -220,40 +212,7 @@
                     </a>
 
 
-                    <!-- MATÉRIAS -->
-
-                    <a
-                        href="materias.html"
-                        class="sidebar-link"
-                        title="Matérias">
-
-                        <svg
-                            class="sidebar-icon"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.8"
-                            stroke-linecap="round"
-                            stroke-linejoin="round">
-
-                            <path
-                                d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z">
-                            </path>
-
-                            <path
-                                d="M4 5.5A2.5 2.5 0 0 0 6.5 8H20">
-                            </path>
-
-                        </svg>
-
-                        <span class="sidebar-text">
-                            Matérias
-                        </span>
-
-                    </a>
-
-
-                    <!-- CALENDÁRIO - ATIVO -->
+                    <!-- CALENDÁRIO -->
 
                     <a
                         href="calendario.html"
@@ -278,15 +237,12 @@
                             </rect>
 
                             <path d="M16 3v4"></path>
-
                             <path d="M8 3v4"></path>
 
                             <path d="M3 10h18"></path>
 
                             <path d="M8 14h.01"></path>
-
                             <path d="M12 14h.01"></path>
-
                             <path d="M16 14h.01"></path>
 
                         </svg>
@@ -321,15 +277,48 @@
                             </circle>
 
                             <path d="M12 9v4l2.5 1.5"></path>
-
                             <path d="M9 3h6"></path>
-
                             <path d="M12 3v2"></path>
 
                         </svg>
 
                         <span class="sidebar-text">
                             Pomodoro
+                        </span>
+
+                    </a>
+
+
+                    <!-- MEU PERFIL -->
+
+                    <a
+                        href="materias.html"
+                        class="sidebar-link"
+                        title="Meu Perfil">
+
+                        <svg
+                            class="sidebar-icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <circle
+                                cx="12"
+                                cy="8"
+                                r="3.5">
+                            </circle>
+
+                            <path
+                                d="M5 20c.8-3.3 3.3-5 7-5s6.2 1.7 7 5">
+                            </path>
+
+                        </svg>
+
+                        <span class="sidebar-text">
+                            Meu Perfil
                         </span>
 
                     </a>
@@ -353,7 +342,6 @@
                             stroke-linejoin="round">
 
                             <path d="M10 17l5-5-5-5"></path>
-
                             <path d="M15 12H3"></path>
 
                             <path
@@ -1241,7 +1229,7 @@
 
             btnMenuCalendario.addEventListener("click", () => {
 
-                sidebarCalendario.classList.toggle("hidden");
+                sidebarCalendario.classList.toggle("mobile-open");
 
             });
 

@@ -41,13 +41,11 @@
     </div>
 
 
-
     <!-- ========================================
          LAYOUT
     ========================================= -->
 
     <div class="flex min-h-screen relative z-10">
-
 
 
         <!-- ========================================
@@ -56,11 +54,11 @@
 
         <aside
             id="sidebarPomodoro"
-            class="hidden lg:flex sidebar-desktop
+            class="hidden lg:flex
+                   sidebar-desktop
                    bg-slate-950/90
                    backdrop-blur-xl
                    border-r border-white/10
-                   p-6
                    flex-col
                    justify-between
                    min-h-screen">
@@ -76,26 +74,19 @@
                 <!-- ====================================
                      LOGO
                 ==================================== -->
-
+                
                 <div class="brand-container">
 
-                    <div class="brand">
+                    <img
+                        src="../assets/StudyFlow.png"
+                        alt="StudyFlow"
+                        class="brand-logo-collapsed">
 
                         <img
-                            src="../assets/StudyFlow.png"
-                            alt=""
-                            class="brand-logo">
-
-                            <img
-                            src="../assets/StutyFlow.2.png"
-                            alt="StudyFlow"
-                            class="brand-logo-expanded">
-                
-                    </div>
-                
-
+                        src="../assets/StutyFlow.2.png"
+                        alt="StudyFlow"
+                        class="brand-logo-expanded">
                 </div>
-
 
 
                 <!-- ====================================
@@ -134,7 +125,6 @@
                         </span>
 
                     </a>
-
 
 
                     <!-- TAREFAS -->
@@ -176,37 +166,6 @@
                         </span>
 
                     </a>
-
-
-
-                    <!-- MATÉRIAS -->
-
-                    <a
-                        href="materias.html"
-                        class="sidebar-link"
-                        title="Matérias">
-
-                        <svg
-                            class="sidebar-icon"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.8"
-                            stroke-linecap="round"
-                            stroke-linejoin="round">
-
-                            <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z"></path>
-
-                            <path d="M4 5.5A2.5 2.5 0 0 0 6.5 8H20"></path>
-
-                        </svg>
-
-                        <span class="sidebar-text">
-                            Matérias
-                        </span>
-
-                    </a>
-
 
 
                     <!-- CALENDÁRIO -->
@@ -254,7 +213,6 @@
                     </a>
 
 
-
                     <!-- POMODORO -->
 
                     <a
@@ -291,6 +249,40 @@
 
                     </a>
 
+
+                    <!-- MEU PERFIL -->
+
+                    <a
+                        href="materias.html"
+                        class="sidebar-link"
+                        title="Meu Perfil">
+
+                        <svg
+                            class="sidebar-icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <circle
+                                cx="12"
+                                cy="8"
+                                r="3.5">
+                            </circle>
+
+                            <path
+                                d="M5 21c0-3.5 2.8-6 7-6s7 2.5 7 6">
+                            </path>
+
+                        </svg>
+
+                        <span class="sidebar-text">
+                            Meu Perfil
+                        </span>
+
+                    </a>
 
 
                     <!-- SAIR -->
@@ -329,13 +321,11 @@
             </div>
 
 
-
             <!-- ========================================
                  PROGRESSO
             ========================================= -->
 
             <div class="sidebar-progress">
-
 
                 <div class="flex justify-between items-center mb-3">
 
@@ -374,7 +364,6 @@
         </aside>
 
 
-
         <!-- ========================================
              CONTEÚDO PRINCIPAL
         ========================================= -->
@@ -383,27 +372,24 @@
             class="flex-1 min-w-0 p-4 md:p-8 pt-24 lg:pt-8 overflow-y-auto">
 
 
-
             <!-- ========================================
                  HEADER MOBILE
             ========================================= -->
 
             <div
-                class="lg:hidden flex justify-between items-center mb-8">
+                class="lg:hidden fixed top-0 left-0 right-0 z-50
+                       flex items-center justify-between
+                       p-4
+                       bg-slate-950/90
+                       backdrop-blur-xl
+                       border-b border-white/10">
 
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-3">
 
                     <img
-                        src="../assets/StudyFlow.png"
-                        alt=""
-                        class="w-10 h-10 object-contain">
-
-                    <span
-                        class="text-xl font-bold tracking-tight">
-
-                        Study<span class="text-cyan-300">Flow</span>
-
-                    </span>
+                        src="../assets/StudyFlow.2.png"
+                        alt="StudyFlow"
+                        class="mobile-brand-logo">
 
                 </div>
 
@@ -411,7 +397,14 @@
                 <button
                     id="btnMenuPomodoro"
                     type="button"
-                    class="w-11 h-11 flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-lg transition">
+                    aria-label="Abrir menu"
+                    class="w-11 h-11
+                           flex items-center justify-center
+                           bg-white/5
+                           hover:bg-white/10
+                           border border-white/10
+                           rounded-xl
+                           transition">
 
                     <svg
                         viewBox="0 0 24 24"
@@ -423,7 +416,9 @@
                         stroke-linecap="round">
 
                         <path d="M4 6h16"></path>
+
                         <path d="M4 12h16"></path>
+
                         <path d="M4 18h16"></path>
 
                     </svg>
@@ -433,7 +428,6 @@
             </div>
 
 
-
             <!-- ========================================
                  CABEÇALHO
             ========================================= -->
@@ -441,14 +435,10 @@
             <div
                 class="flex items-center justify-between mb-10 flex-wrap gap-4">
 
-
                 <div>
 
-                    <p
-                        class="text-cyan-300 font-medium mb-2">
-
+                    <p class="text-cyan-300 font-medium mb-2">
                         Hora de focar
-
                     </p>
 
 
@@ -471,14 +461,25 @@
 
                 <button
                     type="button"
-                    class="w-full md:w-auto bg-gradient-to-r from-blue-500 to-cyan-400 hover:scale-105 transition duration-300 px-7 py-4 rounded-2xl font-bold shadow-2xl shadow-blue-500/20">
+                    class="w-full md:w-auto
+                           bg-gradient-to-r
+                           from-blue-500
+                           to-cyan-400
+                           hover:scale-105
+                           transition
+                           duration-300
+                           px-7
+                           py-4
+                           rounded-2xl
+                           font-bold
+                           shadow-2xl
+                           shadow-blue-500/20">
 
                     Histórico
 
                 </button>
 
             </div>
-
 
 
             <!-- ========================================
@@ -492,7 +493,17 @@
                 <!-- TIMER -->
 
                 <div
-                    class="xl:col-span-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-5 md:p-10 shadow-2xl flex flex-col items-center justify-center">
+                    class="xl:col-span-2
+                           bg-white/5
+                           backdrop-blur-xl
+                           border border-white/10
+                           rounded-3xl
+                           p-5 md:p-10
+                           shadow-2xl
+                           flex
+                           flex-col
+                           items-center
+                           justify-center">
 
 
                     <p
@@ -507,14 +518,19 @@
 
                         <h1
                             id="timer"
-                            class="text-6xl sm:text-7xl md:text-8xl font-black bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                            class="text-6xl sm:text-7xl md:text-8xl
+                                   font-black
+                                   bg-gradient-to-r
+                                   from-blue-400
+                                   to-cyan-300
+                                   bg-clip-text
+                                   text-transparent">
 
                             25:00
 
                         </h1>
 
                     </div>
-
 
 
                     <!-- MODOS -->
@@ -525,7 +541,13 @@
 
                         <button
                             type="button"
-                            class="bg-blue-500/20 border border-blue-500/20 text-blue-300 px-5 md:px-6 py-3 rounded-2xl font-semibold">
+                            class="bg-blue-500/20
+                                   border border-blue-500/20
+                                   text-blue-300
+                                   px-5 md:px-6
+                                   py-3
+                                   rounded-2xl
+                                   font-semibold">
 
                             Foco
 
@@ -534,7 +556,14 @@
 
                         <button
                             type="button"
-                            class="bg-white/5 border border-white/10 px-5 md:px-6 py-3 rounded-2xl font-semibold hover:bg-white/10 transition">
+                            class="bg-white/5
+                                   border border-white/10
+                                   px-5 md:px-6
+                                   py-3
+                                   rounded-2xl
+                                   font-semibold
+                                   hover:bg-white/10
+                                   transition">
 
                             Pausa curta
 
@@ -543,14 +572,20 @@
 
                         <button
                             type="button"
-                            class="bg-white/5 border border-white/10 px-5 md:px-6 py-3 rounded-2xl font-semibold hover:bg-white/10 transition">
+                            class="bg-white/5
+                                   border border-white/10
+                                   px-5 md:px-6
+                                   py-3
+                                   rounded-2xl
+                                   font-semibold
+                                   hover:bg-white/10
+                                   transition">
 
                             Pausa longa
 
                         </button>
 
                     </div>
-
 
 
                     <!-- BOTÕES -->
@@ -562,7 +597,18 @@
                         <button
                             id="btnIniciar"
                             type="button"
-                            class="bg-gradient-to-r from-blue-500 to-cyan-400 px-6 md:px-8 py-3 md:py-4 rounded-2xl font-bold text-base md:text-lg shadow-2xl shadow-blue-500/20 hover:scale-105 transition">
+                            class="bg-gradient-to-r
+                                   from-blue-500
+                                   to-cyan-400
+                                   px-6 md:px-8
+                                   py-3 md:py-4
+                                   rounded-2xl
+                                   font-bold
+                                   text-base md:text-lg
+                                   shadow-2xl
+                                   shadow-blue-500/20
+                                   hover:scale-105
+                                   transition">
 
                             Iniciar
 
@@ -572,7 +618,15 @@
                         <button
                             id="btnPausar"
                             type="button"
-                            class="bg-white/5 border border-white/10 px-6 md:px-8 py-3 md:py-4 rounded-2xl font-bold text-base md:text-lg hover:bg-white/10 transition">
+                            class="bg-white/5
+                                   border border-white/10
+                                   px-6 md:px-8
+                                   py-3 md:py-4
+                                   rounded-2xl
+                                   font-bold
+                                   text-base md:text-lg
+                                   hover:bg-white/10
+                                   transition">
 
                             Pausar
 
@@ -582,9 +636,18 @@
                         <button
                             id="btnResetar"
                             type="button"
-                            class="bg-red-500/20 border border-red-500/20 text-red-300 px-6 md:px-8 py-3 md:py-4 rounded-2xl font-bold text-base md:text-lg hover:bg-red-500/30 transition">
+                            class="bg-red-500/20
+                                   border border-red-500/20
+                                   text-red-300
+                                   px-6 md:px-8
+                                   py-3 md:py-4
+                                   rounded-2xl
+                                   font-bold
+                                   text-base md:text-lg
+                                   hover:bg-red-500/30
+                                   transition">
 
-                            ⟳ Resetar
+                            Resetar
 
                         </button>
 
@@ -593,11 +656,15 @@
                 </div>
 
 
-
                 <!-- DESEMPENHO -->
 
                 <div
-                    class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-5 md:p-7 shadow-2xl">
+                    class="bg-white/5
+                           backdrop-blur-xl
+                           border border-white/10
+                           rounded-3xl
+                           p-5 md:p-7
+                           shadow-2xl">
 
 
                     <h3
@@ -614,7 +681,10 @@
                         <!-- TEMPO FOCADO -->
 
                         <div
-                            class="bg-slate-900/70 rounded-2xl p-5 border border-white/5">
+                            class="bg-slate-900/70
+                                   rounded-2xl
+                                   p-5
+                                   border border-white/5">
 
                             <p class="text-slate-400 text-sm">
                                 Tempo focado hoje
@@ -630,11 +700,13 @@
                         </div>
 
 
-
                         <!-- SESSÕES -->
 
                         <div
-                            class="bg-slate-900/70 rounded-2xl p-5 border border-white/5">
+                            class="bg-slate-900/70
+                                   rounded-2xl
+                                   p-5
+                                   border border-white/5">
 
                             <p class="text-slate-400 text-sm">
                                 Sessões concluídas
@@ -650,11 +722,15 @@
                         </div>
 
 
-
                         <!-- META -->
 
                         <div
-                            class="bg-gradient-to-br from-blue-500/20 to-cyan-400/10 rounded-2xl p-5 border border-blue-400/20">
+                            class="bg-gradient-to-br
+                                   from-blue-500/20
+                                   to-cyan-400/10
+                                   rounded-2xl
+                                   p-5
+                                   border border-blue-400/20">
 
 
                             <p class="text-slate-400 text-sm">
@@ -671,10 +747,20 @@
 
 
                             <div
-                                class="w-full h-2 bg-slate-700/50 rounded-full mt-5 overflow-hidden">
+                                class="w-full
+                                       h-2
+                                       bg-slate-700/50
+                                       rounded-full
+                                       mt-5
+                                       overflow-hidden">
 
                                 <div
-                                    class="h-full w-0 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full">
+                                    class="h-full
+                                           w-0
+                                           bg-gradient-to-r
+                                           from-blue-500
+                                           to-cyan-400
+                                           rounded-full">
                                 </div>
 
                             </div>
@@ -688,13 +774,18 @@
             </section>
 
 
-
             <!-- ========================================
                  SAIBA MAIS SOBRE O POMODORO
             ========================================= -->
 
             <section
-                class="mt-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden">
+                class="mt-6
+                       bg-white/5
+                       backdrop-blur-xl
+                       border border-white/10
+                       rounded-3xl
+                       shadow-2xl
+                       overflow-hidden">
 
 
                 <!-- CABEÇALHO RETRÁTIL -->
@@ -702,7 +793,13 @@
                 <button
                     id="btnSaibaMaisPomodoro"
                     type="button"
-                    class="w-full flex items-center justify-between gap-4 p-6 md:p-8 text-left hover:bg-white/5 transition">
+                    class="w-full
+                           flex items-center justify-between
+                           gap-4
+                           p-6 md:p-8
+                           text-left
+                           hover:bg-white/5
+                           transition">
 
 
                     <div>
@@ -716,7 +813,9 @@
 
 
                         <p
-                            class="text-slate-400 text-sm md:text-base mt-2">
+                            class="text-slate-400
+                                   text-sm md:text-base
+                                   mt-2">
 
                             Entenda como funciona essa técnica de estudo.
 
@@ -725,36 +824,51 @@
                     </div>
 
 
-
                     <!-- ÍCONE -->
 
                     <span
                         id="iconePomodoro"
-                        class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-cyan-300 text-2xl transition-transform duration-300">
+                        class="flex-shrink-0
+                               w-10 h-10
+                               flex items-center justify-center
+                               rounded-xl
+                               bg-white/5
+                               border border-white/10
+                               text-cyan-300
+                               text-2xl
+                               transition-transform
+                               duration-300">
 
-                        
+                        +
 
                     </span>
 
                 </button>
 
 
-
                 <!-- CONTEÚDO RETRÁTIL -->
 
                 <div
                     id="conteudoPomodoro"
-                    class="hidden px-6 pb-6 md:px-8 md:pb-8">
+                    class="hidden
+                           px-6
+                           pb-6
+                           md:px-8
+                           md:pb-8">
 
 
                     <div
-                        class="border-t border-white/10 pt-6">
+                        class="border-t
+                               border-white/10
+                               pt-6">
 
 
                         <!-- EXPLICAÇÃO -->
 
                         <p
-                            class="text-slate-400 leading-relaxed max-w-4xl">
+                            class="text-slate-400
+                                   leading-relaxed
+                                   max-w-4xl">
 
                             A Técnica Pomodoro é um método de organização
                             do tempo que divide o estudo em períodos de
@@ -766,20 +880,29 @@
                         </p>
 
 
-
                         <!-- ETAPAS -->
 
                         <div
-                            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+                            class="grid
+                                   grid-cols-1
+                                   sm:grid-cols-2
+                                   lg:grid-cols-4
+                                   gap-4
+                                   mt-6">
 
 
                             <!-- 01 -->
 
                             <div
-                                class="bg-white/5 border border-white/10 rounded-2xl p-4">
+                                class="bg-white/5
+                                       border border-white/10
+                                       rounded-2xl
+                                       p-4">
 
                                 <span
-                                    class="text-blue-400 font-black text-lg">
+                                    class="text-blue-400
+                                           font-black
+                                           text-lg">
 
                                     01
 
@@ -792,7 +915,9 @@
 
 
                                 <p
-                                    class="text-slate-500 text-sm mt-1">
+                                    class="text-slate-500
+                                           text-sm
+                                           mt-1">
 
                                     Estude por 25 minutos com foco total.
 
@@ -801,14 +926,18 @@
                             </div>
 
 
-
                             <!-- 02 -->
 
                             <div
-                                class="bg-white/5 border border-white/10 rounded-2xl p-4">
+                                class="bg-white/5
+                                       border border-white/10
+                                       rounded-2xl
+                                       p-4">
 
                                 <span
-                                    class="text-cyan-400 font-black text-lg">
+                                    class="text-cyan-400
+                                           font-black
+                                           text-lg">
 
                                     02
 
@@ -821,7 +950,9 @@
 
 
                                 <p
-                                    class="text-slate-500 text-sm mt-1">
+                                    class="text-slate-500
+                                           text-sm
+                                           mt-1">
 
                                     Faça uma pausa de aproximadamente 5 minutos.
 
@@ -830,14 +961,18 @@
                             </div>
 
 
-
                             <!-- 03 -->
 
                             <div
-                                class="bg-white/5 border border-white/10 rounded-2xl p-4">
+                                class="bg-white/5
+                                       border border-white/10
+                                       rounded-2xl
+                                       p-4">
 
                                 <span
-                                    class="text-blue-400 font-black text-lg">
+                                    class="text-blue-400
+                                           font-black
+                                           text-lg">
 
                                     03
 
@@ -850,7 +985,9 @@
 
 
                                 <p
-                                    class="text-slate-500 text-sm mt-1">
+                                    class="text-slate-500
+                                           text-sm
+                                           mt-1">
 
                                     Continue alternando foco e pausas.
 
@@ -859,14 +996,18 @@
                             </div>
 
 
-
                             <!-- 04 -->
 
                             <div
-                                class="bg-white/5 border border-white/10 rounded-2xl p-4">
+                                class="bg-white/5
+                                       border border-white/10
+                                       rounded-2xl
+                                       p-4">
 
                                 <span
-                                    class="text-cyan-400 font-black text-lg">
+                                    class="text-cyan-400
+                                           font-black
+                                           text-lg">
 
                                     04
 
@@ -879,7 +1020,9 @@
 
 
                                 <p
-                                    class="text-slate-500 text-sm mt-1">
+                                    class="text-slate-500
+                                           text-sm
+                                           mt-1">
 
                                     Após 4 ciclos, faça uma pausa maior.
 
@@ -896,17 +1039,26 @@
             </section>
 
 
-
             <!-- ========================================
                  FRASE MOTIVACIONAL
             ========================================= -->
 
             <div
-                class="mt-6 bg-gradient-to-br from-blue-500/20 to-cyan-400/10 backdrop-blur-xl border border-white/10 rounded-3xl p-5 md:p-7 shadow-2xl">
+                class="mt-6
+                       bg-gradient-to-br
+                       from-blue-500/20
+                       to-cyan-400/10
+                       backdrop-blur-xl
+                       border border-white/10
+                       rounded-3xl
+                       p-5 md:p-7
+                       shadow-2xl">
 
 
                 <p
-                    class="text-slate-300 text-lg leading-relaxed">
+                    class="text-slate-300
+                           text-lg
+                           leading-relaxed">
 
                     “Grandes resultados vêm da consistência diária.”
 
@@ -914,7 +1066,9 @@
 
 
                 <p
-                    class="text-cyan-300 mt-5 font-semibold">
+                    class="text-cyan-300
+                           mt-5
+                           font-semibold">
 
                     — StudyFlow
 
@@ -927,7 +1081,6 @@
     </div>
 
 
-
     <!-- ========================================
          SCRIPTS
     ========================================= -->
@@ -935,7 +1088,6 @@
     <script src="../js/pomodoro.js"></script>
 
     <script src="../js/auth.js"></script>
-
 
 
     <!-- ========================================
@@ -946,7 +1098,7 @@
 
         /* ========================================
            MENU MOBILE
-        ========================================= */
+        ======================================== */
 
         const btnMenuPomodoro =
             document.getElementById("btnMenuPomodoro");
@@ -964,7 +1116,9 @@
                 "click",
                 () => {
 
-                    sidebarPomodoro.classList.toggle("hidden");
+                    sidebarPomodoro.classList.toggle(
+                        "mobile-open"
+                    );
 
                 }
             );
@@ -972,10 +1126,9 @@
         }
 
 
-
         /* ========================================
            CARD RETRÁTIL
-        ========================================= */
+        ======================================== */
 
         const btnSaibaMaisPomodoro =
             document.getElementById(
