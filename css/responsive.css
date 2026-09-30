@@ -144,20 +144,36 @@
        ======================================================= */
   
     .sidebar-desktop .brand-logo-expanded {
-      display: none !important;
-  
-      width: 190px !important;
-      height: auto !important;
-  
-      max-width: 100% !important;
-  
-      object-fit: contain;
-  
-      margin: 0 auto !important;
-      padding: 0 !important;
-  
-      opacity: 0;
-    }
+  display: none !important;
+
+  width: 190px !important;
+  height: auto !important;
+
+  max-width: 100% !important;
+
+  object-fit: contain;
+
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  opacity: 0;
+}
+
+.sidebar-desktop:hover .brand-logo-expanded {
+  display: block !important;
+
+  width: 190px !important;
+  height: auto !important;
+
+  max-width: 100% !important;
+
+  object-fit: contain;
+
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  opacity: 1;
+}
   
   
     /* =======================================================
